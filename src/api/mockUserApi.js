@@ -1,4 +1,5 @@
-const delay = 1000;
+import delay from './delay';
+
 const users = [
     {
         id: "asdsa3453",
@@ -12,6 +13,10 @@ const users = [
     }
 ];
 
+const generateId = (user) => {
+    return user.firstName + '-' + user.lastName;
+};
+
 class UserApi {
     static getAllUsers() {
         return new Promise((resolve, reject) => {
@@ -20,4 +25,20 @@ class UserApi {
             }, delay);
         });
     }
+    static saveUser(user) {
+        user = Object.assign({}, user); // to avoid manipulating object passed in.
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (user.id) {
+              const existingUserIndex = users.findIndex(a => a.id == user.id);
+              users.splice(existingUserIndex, 1, user);
+            } else {
+              user.id = generateId(user);
+              users.push(user);
+            }
+    
+            resolve(user);
+          }, delay);
+        });
+      }
 }
