@@ -1,0 +1,43 @@
+.userDetails {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    box-shadow: 1px 2px 5px #888888;
+}
+
+.GeneralDetails {
+    background-color: rgb(227, 234, 233);
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.specsDetails { 
+    background-color: rgb(207,220,220);
+    direction:rtl;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.profDetail {
+    background-color: rgb(36,156,158);
+    color: white;
+    height: 30px;
+    width: 100px;
+    border-radius: 30%;
+    border: none;
+}
+
+.dotted {
+    border-left: 2px dashed #a4b1b1;
+    height: 150px;
+    position: absolute;
+    top: 12%;
+}
+
+.test {
+    
+}
