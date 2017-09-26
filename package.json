@@ -27,6 +27,7 @@
     "react-treeview-mui": "^0.1.2",
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
+    "shortid": "^2.2.8",
     "toastr": "2.1.2"
   },
   "devDependencies": {

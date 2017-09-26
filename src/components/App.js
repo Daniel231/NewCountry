@@ -56,7 +56,10 @@ let data = [
           title: "הבוס"
         },
         {
-          title:"העייף"
+          title:"העייף",
+          children: [
+            {title:"מאוד"}
+          ]
         }
       ]
     },
@@ -109,7 +112,7 @@ class App extends React.Component {
             <div className="hebrew">
                 <Header title="הגינה של סלדג"/>
                 <div className="side-menu">
-                  <TreeView data={data} textField={"title"} childrenField={"children"} />
+                  <TreeView data={data} />
                 </div>
             </div>
             </MuiThemeProvider>
