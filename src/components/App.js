@@ -1,13 +1,13 @@
 import React, {PropTypes} from 'react';
-import UserAvatar from "./avatar.js";
-import Profile from "./profile.js"
-import style from "../style/style.css";
+import UserAvatar from "./Avatar.js";
+import Profile from "./Profile.js";
+import Style from "../style/style.css";
 
 class App extends React.Component {
     render() {
         return (
-        <div className={style.userDetails}>
-            <div className={style.GeneralDetails} style={{position: "relative"}}>
+        <div className={Style.userDetails}>
+            <div className={Style.GeneralDetails} style={{position: "relative"}}>
                 <UserAvatar/>
                 <span style={{position: "relative", right: "10%"}}>
                     <h2>ארז עדן | ראש צוות אפיון</h2>
@@ -22,7 +22,7 @@ class App extends React.Component {
                     <Profile/>
                 </span>
             </div>
-            <div className={style.specsDetails}>
+            <div className={Style.specsDetails}>
                 <div style={{
                 position: "absolute",
                 left: "58%" ,
@@ -35,18 +35,18 @@ class App extends React.Component {
                         <br/>
                         סיווג: סודי ביותר
             </div>
-            <div className={style.dotted}></div>
+            <div className={Style.dotted}></div>
             <div style={{
                 position: "absolute",
                 right: "53%",
                 top: "22%"}}>
-                טלפון: <span className={style.test}> 02-4865379 </span>
+                טלפון: <span className={Style.test}> 02-4865379 </span>
                 <br/>
-                נייד: <span className={style.test}> 052-4897741 </span>
+                נייד: <span className={Style.test}> 052-4897741 </span>
                 <br/>
-                דוא"ל: <span className={style.test}> bla@gmail.com </span>
+                דוא"ל: <span className={Style.test}> bla@gmail.com </span>
                 <br/>
-                כתובת: <span className={style.test}> שלמה בן יוסף, 16, ירושלים </span>
+                כתובת: <span className={Style.test}> שלמה בן יוסף, 16, ירושלים </span>
             </div>
         </div>
         </div>

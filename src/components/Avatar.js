@@ -7,13 +7,14 @@ const UserAvatar = function (props) {
     const style = {position: "absolute",
     right: "2%",
     top: "5%",
-    margin: 5};
+    margin: 5,
+    border: "3px solid rgb(145,182, 182)"};
 
     return (
       <div>
         <MuiThemeProvider>
             <Avatar
-            src="http://www.material-ui.com/images/uxceo-128.jpg"
+            src="https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg"
             size={170}
             style={style}
             />

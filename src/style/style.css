@@ -22,15 +22,6 @@
     width: 50%;
 }
 
-.profDetail {
-    background-color: rgb(36,156,158);
-    color: white;
-    height: 30px;
-    width: 100px;
-    border-radius: 30%;
-    border: none;
-}
-
 .dotted {
     border-left: 2px dashed #a4b1b1;
     height: 150px;
