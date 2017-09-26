@@ -1,57 +1,135 @@
 import React, {PropTypes} from 'react';
-import UserAvatar from "./Avatar.js";
-import Profile from "./Profile.js";
-import Style from "../style/style.css";
+import ProfHeader from "./ProfHeader.js";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import Header from './common/header.component';
+import TreeView from './common/treeView.component';
+
+
+injectTapEventPlugin();
+//configure the theme to work with RTL
+const uiTheme = getMuiTheme({
+    isRtl: true
+});
+
+// let items = [
+//     {  
+//         "depth":0,
+//         "children":[],
+//         "_shouldRender":false
+//     },
+//     {
+//         "depth": 1,
+//         "children": [2,4],
+//         "title": "emglis",
+//         "parentIndex": 0
+//     },
+//     {
+//         "depth": 2,
+//         "children": [3],
+//         "title": "בצפון",
+//         "parentIndex": 1
+//     },
+//     {
+//         "depth": 3,
+//         "title": "דפוק",
+//         "parentIndex": 2
+//     },
+//     {
+//         "depth": 2,
+//         "title": "בעזעזל",
+//         "parentIndex": 1
+//     },
+//     {
+//         "depth": 1,
+//         "title": "נו כבר",
+//         "parentIndex": 0
+//     }
+// ];
+
+
+let data = [
+    {
+      title: "אלעד",
+      children: [
+        {
+          title: "הבוס"
+        },
+        {
+          title:"העייף",
+          children: [
+            {title:"מאוד"}
+          ]
+        }
+      ]
+    },
+    {
+      title:"יונתן",
+      children:[
+        {
+          title: "האפורי"
+        }
+      ]
+    },
+    {
+      title:"יונתן",
+      children:[
+        {
+          title: "האפורי"
+        }
+      ]
+    },
+    {
+      title:"יונתן",
+      children:[
+        {
+          title: "האפורי"
+        }
+      ]
+    },
+    {
+      title:"יונתן",
+      children:[
+        {
+          title: "האפורי"
+        }
+      ]
+    },
+    {
+      title:"יונתן",
+      children:[
+        {
+          title: "האפורי"
+        }
+      ]
+    }
+  ];
+
+const Sidebar = () => {
+  return (
+    <div>
+      <MuiThemeProvider muiTheme={uiTheme} >
+          <div className="hebrew">
+              <Header title="הגינה של סלדג"/>
+              <div className="side-menu">
+                <TreeView data={data} />
+              </div>
+          </div>
+      </MuiThemeProvider>
+    </div>
+  );
+};
 
 class App extends React.Component {
     render() {
         return (
-        <div className={Style.userDetails}>
-            <div className={Style.GeneralDetails} style={{position: "relative"}}>
-                <UserAvatar/>
-                <span style={{position: "relative", right: "10%"}}>
-                    <h2>ארז עדן | ראש צוות אפיון</h2>
-                    <h5>NGSOFT | סטודיו</h5>
-                    <p> 
-                    <h4> 
-                        ראש צוות אפיון בסטודיו בחברת אנג'יסופט
-                        <br/>
-                        כאן יהיה עוד טקסט של תיאור התפקיד כאן יהיה טקסט נוסף
-                    </h4>
-                    </p>
-                    <Profile/>
-                </span>
-            </div>
-            <div className={Style.specsDetails}>
-                <div style={{
-                position: "absolute",
-                left: "58%" ,
-                top: "22%"}}>
-                        מס' אישי: 1234567
-                        <br/>
-                        תעודת זהות: 488995672
-                        <br/>
-                        דרגה: סרן
-                        <br/>
-                        סיווג: סודי ביותר
-            </div>
-            <div className={Style.dotted}></div>
-            <div style={{
-                position: "absolute",
-                right: "53%",
-                top: "22%"}}>
-                טלפון: <span className={Style.test}> 02-4865379 </span>
-                <br/>
-                נייד: <span className={Style.test}> 052-4897741 </span>
-                <br/>
-                דוא"ל: <span className={Style.test}> bla@gmail.com </span>
-                <br/>
-                כתובת: <span className={Style.test}> שלמה בן יוסף, 16, ירושלים </span>
-            </div>
-        </div>
+        <div>
+          <ProfHeader/>
+          <Sidebar/>
         </div>
         );
-    } 
+      }
 }
 
 export default App;
