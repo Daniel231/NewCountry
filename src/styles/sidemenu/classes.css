@@ -1,0 +1,15 @@
+.listBody {
+    width: 16%;
+    /* overflow: auto; */
+    /* font-size: 12px;
+    font-weight: 200;
+    background-color: #D1DDDD;
+    color: #e1ffff; */
+}
+
+.buttonInListItem{
+    right: 4px !important;
+    /* left: 0; */
+    background-attachment: fixed;
+}
+

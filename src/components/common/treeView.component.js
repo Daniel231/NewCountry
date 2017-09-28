@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import {List, ListItem, makeSelectable} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import {Classes, Styles} from '../../styles/sidemenu';
+
+
 
 let SelectableList = makeSelectable(List);
 
@@ -38,6 +42,7 @@ function wrapState(ComposedComponent) {
         <ComposedComponent
           value={this.state.selectedIndex}
           onChange={this.handleRequestChange}
+          selectedItemStyle={this.props.selectedItemStyle}
         >
           {this.props.children}
         </ComposedComponent>
@@ -53,10 +58,43 @@ function wrapState(ComposedComponent) {
 }
 SelectableList = wrapState(SelectableList);
 
+function extendListItem(ListItemComponent){
+  let c = class MyListItem extends React.Component {
+    constructor(props){
+      super(props);
+      this.listProps={};
+      this.onToggle = this.onToggle.bind(this);
+    }
+    componentWillMount() {
+      this.setState({
+        open: this.props.initiallyOpen
+      });
+    }
+    onToggle(){
+      this.setState((prevState, props)=>({
+        open: !prevState.open
+      }));
+    }
+    render(){
+      return (
+        <ListItemComponent  {...this.props} onNestedListToggle={this.onToggle}>
+          {this.props.children}
+        </ListItemComponent>
+      );
+    }
+  };
+  return c;
+}
+let StateListItem = extendListItem(ListItem);
+
+
+
+
+
 /**
  * creates array of ListItem's JSX according to the tree data array
  */
-function createListItemsJsx({data, textField, valueField, childrenField}) {
+function createListItemsJsx({data, textField, valueField, childrenField, topLevel= false}) {
   if(!data) return [];
   let listItemsJSX= [];
   let i=1;
@@ -65,7 +103,8 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
       item[childrenField].length ? item[childrenField].length : 0;
       const value = valueField && item[valueField] ? item[valueField] : shortid.generate();
     listItemsJSX.push((
-      <ListItem
+      <ListItem style={topLevel? Styles.listItem:Styles.listItem} 
+        nestedListStyle={Styles.nestedList}
         value = {value}
         key = {i++}
         primaryText= {item[textField]}
@@ -76,9 +115,11 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
           childrenField
         })}
         primaryTogglesNestedList = {true}
+        insetChildren = {true}
         // more stuff
       />
     ));
+    // if(item != data[data.length-1] || item[childrenField]){listItemsJSX.push(<Divider key={i++}/>)}
     // i = i + childrenLength +1;
   }
   return listItemsJSX;
@@ -87,9 +128,11 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
 const TreeView = ({data, textField, childrenField, valueField, onChange}) => {
   const defVal = data[0] && valueField ? data[0][valueField] : 1;
   return (
-    <SelectableList onChange={onChange} defaultValue={defVal} >
-      {createListItemsJsx({data, textField, valueField, childrenField})}
-    </SelectableList>
+    <div className={Classes.listBody}>
+      <SelectableList onChange={onChange} defaultValue={defVal} selectedItemStyle={Styles.selectedItem} >
+        {createListItemsJsx({data, textField, valueField, childrenField, topLevel:true})}
+      </SelectableList>
+    </div>
   );
 };
 

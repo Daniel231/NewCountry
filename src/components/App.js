@@ -5,6 +5,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Header from './common/header.component';
 import TreeView from './common/treeView.component';
+import Style from "../styles/App.css";
+
 
 
 injectTapEventPlugin();
@@ -70,30 +72,47 @@ let data = [
     }
   ];
 
-const Sidebar = () => {
+// const Sidebar = () => {
+//   return (
+//     <div className = {Style.side_menu} >
+//       <TreeView data={data} />
+//     </div>
+//   );
+// };
+
+const MainView = () => {
   return (
-    <div>
-      <MuiThemeProvider muiTheme={uiTheme} >
-          <div className="hebrew">
-              <div className="side-menu">
-                <TreeView data={data} />
-              </div>
-          </div>
-      </MuiThemeProvider>
+    <div className={Style.main_view}>
+      <ProfHeader/>
     </div>
   );
-};
+}
 
 class App extends React.Component {
     render() {
         return (
-        <div>
-          <MuiThemeProvider muiTheme={uiTheme} >
-            <Header title="הגינה של סלדג" className="hebrew"/>
-          </MuiThemeProvider>
-          <ProfHeader/>
-          <Sidebar/>
-        </div>
+         
+            <MuiThemeProvider muiTheme={uiTheme}>
+            <div className={Style.hebrew}>
+              <Header title="הגינה של סלדג"/>
+              <div>
+                <MainView/>
+                <TreeView data={data}/>
+              </div>
+            </div>
+            </MuiThemeProvider>
+          
+
+
+
+
+        // <div className={Style.hebrew}>
+        //   <MuiThemeProvider muiTheme={uiTheme} >
+        //     <Header title="הגינה של סלדג" className="hebrew"/>
+        //   </MuiThemeProvider>
+        //   <ProfHeader/>
+        //   <Sidebar/>
+        // </div>
         );
       }
 }

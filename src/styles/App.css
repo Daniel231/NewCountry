@@ -3,6 +3,13 @@
 	/* float: right; */
 }
 
-.side-menu {
+div.hebrew {
+	right: 4px !important;
+}
+
+.side_menu {
 	width: 20%;
+}
+.main_view {
+	direction: ltr;
 }
