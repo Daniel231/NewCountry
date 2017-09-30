@@ -6,7 +6,7 @@ const styles = {
         color: '#FFFFFF'
     },
     listItem: {
-        width: '100%',
+        // width: '100%',
         // height: '38px',
         // paddingRight: '18px',
         // paddingTop: '8px',
@@ -14,16 +14,22 @@ const styles = {
         borderBottom: 'solid 1px #CCD1D5',
         fontSize: '14px',
         color: '#1F3A41',
-        fontWeight: '600'
-        
-        
+        fontWeight: '600',
+        padding: 0 
     },
     nestedList: {
         padding: 0
         // backgroundColor: '#D1DDDD',
         // fontWeight: '600',
-        // borderBottom: 'solid 1px #FFFFFF',
+        // // borderBottom: 'solid 1px #CCD1D5',
         // fontSize: '14px'        
+    },
+    openItem: {
+        padding: 0,
+        backgroundColor: '#D1DDDD',
+        fontWeight: '600',
+        // borderBottom: 'solid 1px #CCD1D5',
+        fontSize: '14px'        
     }
 };
 

@@ -72,14 +72,6 @@ let data = [
     }
   ];
 
-// const Sidebar = () => {
-//   return (
-//     <div className = {Style.side_menu} >
-//       <TreeView data={data} />
-//     </div>
-//   );
-// };
-
 const MainView = () => {
   return (
     <div className={Style.main_view}>
