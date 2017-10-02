@@ -89,7 +89,7 @@ class App extends React.Component {
               <Header title="הגינה של סלדג"/>
               <div>
                 <MainView/>
-                <TreeView data={data}/>
+                <TreeView/>
               </div>
             </div>
             </MuiThemeProvider>
