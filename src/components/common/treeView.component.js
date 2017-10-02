@@ -102,8 +102,10 @@ let StateListItem = extendListItem(ListItem);
 /**
  * creates array of ListItem's JSX according to the tree data array
  */
-function createListItemsJsx({data, textField, valueField, childrenField}) {
-  if(!data) return [];
+function createListItemsJsx(data, textField, valueField, childrenField) {
+  if(!data) { 
+    return [];
+  }
   return data.map((item, index) => {
     const value = valueField && item[valueField] ? item[valueField] 
     :shortid.generate();
@@ -114,12 +116,7 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
         value = {value}
         key = {index}
         primaryText= {item[textField]}
-        nestedItems = {createListItemsJsx({
-          data: item[childrenField],
-          textField,
-          valueField, 
-          childrenField
-        })}
+        nestedItems = {createListItemsJsx(item[childrenField], textField, valueField, childrenField)}
         primaryTogglesNestedList = {true}
         insetChildren = {true}
         autoGenerateNestedIndicator={false}/>
@@ -128,26 +125,53 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
 }
 
 
-const TreeView = ({data, textField, childrenField, valueField, onChange}) => {
-  const defVal = data[0] && valueField ? data[0][valueField] : 1;
-  return (
-    <div className={Classes.listBody}>
-      <SelectableList onChange={onChange} defaultValue={defVal} 
-          selectedItemStyle={Styles.selectedItem} >
-        {createListItemsJsx({data, textField, valueField, childrenField})}
-      </SelectableList>
-    </div>
-  );
-};
+// React compontent that creates the tree
+class TreeView extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      defVal: 1
+    };
+  }
+
+  // Before data is rendered on DOM make call to retrieve JSON data
+  componentWillMount() {  
+    // Sample url of JSON data
+    fetch('https://gist.githubusercontent.com/yehudaNodeside/66b1e6dc9faac71e26c075a36e0ee01a/raw/71c3faa61b706ee59f119998d54b3cb2bf6827f8/newCountry.json')
+      .then(function(response) {
+        if (response.status >= 400) {
+          throw new Error("Bad response from server");
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        // Save the results in state
+        this.setState({data: data});
+        this.setState({defVal: this.state.data[0] && this.props.valueField ? this.state.data[0][this.props.valueField] : 1});
+    }.bind(this));
+  }
+
+  render() {
+    return (
+      <div className={Classes.listBody}>
+        <SelectableList onChange={this.props.onChange} defaultValue={this.state.defVal} 
+            selectedItemStyle={Styles.selectedItem} >
+          {createListItemsJsx(this.state.data, this.props.textField, this.props.valueField, this.props.childrenField)}
+        </SelectableList>
+      </div>
+    );
+  }
+}
+
+// Removed data from props
 TreeView.defaultProps = {
-  data: [],
   textField: "title",
   childrenField: "children"
 };
 
 TreeView.propTypes = {
-  data: PropTypes.array.isRequired,
   textField: PropTypes.string.isRequired,
   childrenField: PropTypes.string.isRequired,
   valueField: PropTypes.string,
