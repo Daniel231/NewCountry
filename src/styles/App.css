@@ -1,15 +1,27 @@
+html,body {
+	height: 100%;
+}
+
 .hebrew {
 	direction: rtl;
 	/* float: right; */
 }
 
-div.hebrew {
-	right: 4px !important;
+.main_body {
+	display: flex;
+	margin-top: 4px;
 }
 
 .side_menu {
+	/* display: inline-block; */
 	width: 20%;
 }
 .main_view {
+	/* display: inline-block; */
+	/* height: 100%; */
+	width: 84%;
+	background-color: #D1DDDD;
+}
+.profile {
 	direction: ltr;
 }

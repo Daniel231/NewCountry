@@ -1,5 +1,7 @@
 .listBody {
     width: 16%;
+    margin: 0;
+    padding: 0;
     /* overflow: auto; */
     /* font-size: 12px;
     font-weight: 200;

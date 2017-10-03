@@ -42,6 +42,7 @@ function wrapState(ComposedComponent) {
     render() {
       return (
         <ComposedComponent
+          style = {this.props.style}
           value={this.state.selectedIndex}
           onChange={this.handleRequestChange}
           selectedItemStyle={this.props.selectedItemStyle}
@@ -132,7 +133,7 @@ const TreeView = ({data, textField, childrenField, valueField, onChange}) => {
   const defVal = data[0] && valueField ? data[0][valueField] : 1;
   return (
     <div className={Classes.listBody}>
-      <SelectableList onChange={onChange} defaultValue={defVal} 
+      <SelectableList style={{padding:0}} onChange={onChange} defaultValue={defVal} 
           selectedItemStyle={Styles.selectedItem} >
         {createListItemsJsx({data, textField, valueField, childrenField})}
       </SelectableList>
