@@ -3,9 +3,11 @@ import ProfHeader from "./ProfHeader.js";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import Header from './common/header.component';
-import TreeView from './common/treeView.component';
+import Header from './common/Header';
+import TreeView from './common/TreeView';
+import GridList from './common/AvatarGridList';
 import Table from './UsersTable';
+import MainView from './MainView';
 import Style from "../styles/App.css";
 
 
@@ -16,62 +18,7 @@ const uiTheme = getMuiTheme({
     isRtl: true
 });
 
-let data = [
-    {
-      title: "אלעד",
-      children: [
-        {
-          title: "הבוס"
-        },
-        {
-          title:"העייף",
-          children: [
-            {title:"מאוד"}
-          ]
-        }
-      ]
-    },
-    {
-      title:"יונתן",
-      children:[
-        {
-          title: "האפורי"
-        }
-      ]
-    },
-    {
-      title:"יונתן",
-      children:[
-        {
-          title: "האפורי"
-        }
-      ]
-    },
-    {
-      title:"יונתן",
-      children:[
-        {
-          title: "האפורי"
-        }
-      ]
-    },
-    {
-      title:"יונתן",
-      children:[
-        {
-          title: "האפורי"
-        }
-      ]
-    },
-    {
-      title:"יונתן",
-      children:[
-        {
-          title: "האפורי"
-        }
-      ]
-    }
-  ];
+
 
 const TopProfile = () => {
   return (
@@ -79,16 +26,16 @@ const TopProfile = () => {
       <ProfHeader/>
     </div>
   );
-}
+};
 
-const MainView = () => {
-  return (
-    <div className= {Style.main_view}>
-      <div style={{marginRight:"2%",marginTop:"2%"}}><Table data={[{name:"אלעד",role:"בוס"},{name:"יונתן",role:"עבד"}]} headerCols={["שם","תפקיד"]} dataFields={["name","role"]} /></div>
+// const MainView = () => {
+//   return (
+//     <div className= {Style.main_view}>
+//       <div style={{marginRight:"2%",marginTop:"2%"}}><Table data={[{name:"אלעד",role:"בוס"},{name:"יונתן",role:"עבד"}]} headerCols={["שם","תפקיד"]} dataFields={["name","role"]} /></div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
 class App extends React.Component {
     render() {
@@ -97,12 +44,12 @@ class App extends React.Component {
             <MuiThemeProvider muiTheme={uiTheme}>
             <div className={Style.hebrew}>
               <Header title="הגינה של סלדג"/>
-              <div>
-                <div><TopProfile/></div>
-                <div className={Style.main_body}>
-                <TreeView data={data}/>
-                <MainView/>
-                </div>
+              <div className={Style.mainDiv}>
+               <TopProfile/>
+               <TreeView data={groups}/>
+               {/* <Table {...tableData}/>  */}
+               <GridList data={groups} titleField={'title'}/>
+                
               </div>
             </div>
             </MuiThemeProvider>
@@ -121,5 +68,76 @@ class App extends React.Component {
         );
       }
 }
+
+
+/**
+ * only for now
+ */
+let groups = [
+  {
+    title: "אלעד",
+    children: [
+      {
+        title: "הבוס"
+      },
+      {
+        title:"העייף",
+        children: [
+          {title:"מאוד"}
+        ]
+      }
+    ]
+  },
+  {
+    title:"יונתן",
+    children:[
+      {
+        title: "האפורי"
+      }
+    ]
+  },
+  {
+    title:"יונתן",
+    children:[
+      {
+        title: "האפורי"
+      }
+    ]
+  },
+  {
+    title:"יונתן",
+    children:[
+      {
+        title: "האפורי"
+      }
+    ]
+  },
+  {
+    title:"יונתן",
+    children:[
+      {
+        title: "האפורי"
+      }
+    ]
+  },
+  {
+    title:"יונתן",
+    children:[
+      {
+        title: "האפורי"
+      }
+    ]
+  }
+];
+
+
+let tableData = {
+  data: [{name:"אלעד",role:"בוס"},{name:"יונתן",role:"עבד"}],
+  headerCols: ["שם","תפקיד"],
+  dataFields: ["name","role"]
+
+}
+
+
 
 export default App;

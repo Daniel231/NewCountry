@@ -2,26 +2,16 @@ html,body {
 	height: 100%;
 }
 
+.mainDiv {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .hebrew {
 	direction: rtl;
 	/* float: right; */
 }
-
-.main_body {
-	display: flex;
-	margin-top: 4px;
-}
-
-.side_menu {
-	/* display: inline-block; */
-	width: 20%;
-}
-.main_view {
-	/* display: inline-block; */
-	/* height: 100%; */
-	width: 84%;
-	background-color: #D1DDDD;
-}
 .profile {
 	direction: ltr;
+	width:100%;
 }
