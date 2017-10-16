@@ -8,48 +8,63 @@ class ProfHeader extends React.Component {
         return (
         <div>
             <div className={Style.userDetails}>
-            <div className={Style.GeneralDetails} style={{position: "relative"}}>
-                <UserAvatar/>
-                <span style={{position: "relative", right: "10%"}}>
-                    <h2>ארז עדן | ראש צוות אפיון</h2>
-                    <h5>NGSOFT | סטודיו</h5>
-                    <p> 
-                    <h4> 
-                        ראש צוות אפיון בסטודיו בחברת אנג'יסופט
-                        <br/>
-                        כאן יהיה עוד טקסט של תיאור התפקיד כאן יהיה טקסט נוסף
-                    </h4>
-                    </p>
-                    <Profile/>
-                </span>
-            </div>
-            <div className={Style.specsDetails}>
-                <div style={{
-                position: "absolute",
-                left: "58%" ,
-                top: "22%"}}>
-                        מס' אישי: 1234567
-                        <br/>
-                        תעודת זהות: 488995672
-                        <br/>
-                        דרגה: סרן
-                        <br/>
-                        סיווג: סודי ביותר
+                <div className={Style.GeneralDetails}>
+                    <UserAvatar/>
+                    <div className={Style.rightColDiv}>
+                        <div className={Style.imgDetails}>
+                            <div className={Style.mainJobTitle}>
+                                <span>שם מלא | תפקיד בחברה</span>
+                            </div>
+                            <div className={Style.subJobTitle}>
+                                <span>חברה | מחלקה </span>
+                            </div>
+                            <div className={Style.jobDescrption}>
+                                <span>ראש צוות איפיון בחברה וכאן יהיה כל מיני תיאורים על העבודה עצמה והאופי שלה וכולי וכולי וכולי כל מיני
+                                    דברים
+                                </span>
+                            </div>
+                            <Profile/>
+                        </div>
+                    </div>
                 </div>
-            <div className={Style.dotted}></div>
-            <div style={{
-                position: "absolute",
-                right: "53%",
-                top: "22%"}}>
-                טלפון: <span className={Style.test}> 02-4865379 </span>
-                <br/>
-                נייד: <span className={Style.test}> 052-4897741 </span>
-                <br/>
-                דוא"ל: <span className={Style.test}> bla@gmail.com </span>
-                <br/>
-                כתובת: <span className={Style.test}> שלמה בן יוסף, 16, ירושלים </span>
-            </div>
-            </div>
+                <div className={Style.leftDiv}>
+                    <div className={Style.leftCol}>
+                        <div className={Style.leftDivLine}>
+                            <div className={Style.leftDivTitle}>מס' אישי:</div>
+                            <div className={Style.leftDivDetail}>6861599</div>
+                        </div>
+                        <div className={Style.leftDivLine}>
+                            <div className={Style.leftDivTitle}>תעודת זהות:</div>
+                            <div className={Style.leftDivDetail}>6861599</div>
+                        </div>
+                        <div className={Style.leftDivLine}>
+                            <div className={Style.leftDivTitle}>דרגה:</div>
+                            <div className={Style.leftDivDetail}>סרן</div>
+                        </div>
+                        <div className={Style.leftDivLine}>
+                            <div className={Style.leftDivTitle}>סיווג:</div>
+                            <div className={Style.leftDivDetail}>סודי ביותר</div>
+                        </div>
+                    </div>
+                    <div className={Style.rightCol}>
+                        <div className={Style.leftDivLine}>
+                            <div className={Style.rightDivTitle}>טלפון:</div>
+                            <div className={Style.leftDivDetail}>6861599</div>
+                        </div>
+                        <div className={Style.leftDivLine}>
+                            <div className={Style.rightDivTitle}>נייד:</div>
+                            <div className={Style.leftDivDetail}>6861599</div>
+                        </div>
+                        <div className={Style.leftDivLine}>
+                            <div className={Style.rightDivTitle}>דוא"ל:</div>
+                            <div className={Style.leftDivDetail}>Tomer.i@ngsoft.com</div>
+                        </div>
+                        <div className={Style.leftDivLine}>
+                            <div className={Style.rightDivTitle}>כתובת:</div>
+                            <div className={Style.leftDivDetail}>כתובת המגורים של העובד</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         );

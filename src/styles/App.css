@@ -12,6 +12,6 @@ html,body {
 	/* float: right; */
 }
 .profile {
-	direction: ltr;
+	direction: rtl;
 	width:100%;
 }

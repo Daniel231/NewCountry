@@ -1,0 +1,110 @@
+.sortAndSearchDiv{
+    margin-right: 53px;
+    margin-top: 15px;  
+    width: 96.5%;
+    min-width: 1055px;
+}
+.teamDiv{
+    font-size: 28px;
+    color: #203B46;
+    font-weight: 200;
+    display: inline-block;
+}
+.numberOf{
+    font-size:14px;
+}
+.wrapperDropdown1 {
+    position: relative;
+    width: 18.5%;
+    margin: 0 auto;
+    background: #9bc7de;
+    outline: none;
+    cursor: pointer;
+    height: 32px;
+    border-radius: 25px;
+    background-color: #90B7B6;
+    color: #EFEFF1;
+    padding-right: 25px;
+    padding-top: 4px;
+    /* background-image: url(asset/arrow-down.png); */
+    background-position: 14px 8px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.wrapperDropdown1 .dropdown {
+    /* Size & position */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    /* Styles */
+    background: #FBFBFB;
+    list-style: none;
+    font-weight: normal; /* Cancels previous font-weight: bold; */
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapperDropdown1 .dropdown li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-bottom: solid 1px #CCD1D5;
+}
+
+/* Hover state */
+.wrapperDropdown1 .dropdown li:hover a {
+    background: #0FA397;
+}
+
+/* Active state */
+.wrapperDropdown1.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.wrapperDropdown1.active{
+    border-radius: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* background-image: url(asset/arrow-up.png); */
+    background-position: 14px 8px;
+    background-repeat: no-repeat;
+}
+.wrapperDropdown1>ul{
+    -webkit-padding-start: 0;
+}
+
+.textDiv{
+    display: inline-block;
+    margin-right: 20px;
+    width: 26.5%;
+}
+.textDiv input{
+    width: 100%;
+    height: 32px; 
+    border-radius: 25px;
+    border: none;
+    color: #939CA1;
+    /* background-image: url(asset/search.png); */
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+    outline: none;
+    padding-right: 20px;
+}
+
+.selectBtn{
+    background: transparent;
+    border: none;
+    height: 42px;
+    width: 33px;
+}
+.selectBtn:not(:last-child){
+    margin-right: 20px;
+}

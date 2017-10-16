@@ -5,6 +5,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import Avatar from 'material-ui/Avatar';
 import DefaultUserIcon from 'material-ui/svg-icons/social/person';
 import {Classes} from '../../styles/avatarGridList';
+import SortAndSearch from '../SortAndSearch';
 
 const baseStyles = {
   avatarDiv: {
@@ -32,6 +33,7 @@ function internalOnClick(value, cb){
 
 const AvatarGridList = ({data, valueField, titleField, cols, onClick}) => (
   <div className={Classes.container}>
+    <SortAndSearch/>
     <GridList  cols={cols} cellHeight={'auto'}>
       {data.map(item => (
         <GridTile

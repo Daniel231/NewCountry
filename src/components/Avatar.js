@@ -4,10 +4,7 @@ import Avatar from 'material-ui/Avatar';
 
 
 const UserAvatar = function (props) {
-    const style = {position: "absolute",
-    right: "2%",
-    top: "5%",
-    margin: 5,
+    const style = {position: "relative",
     border: "3px solid rgb(145,182, 182)"};
 
     return (
