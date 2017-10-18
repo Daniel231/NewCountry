@@ -3,25 +3,44 @@ import Profile from "./Profile.js";
 import UserAvatar from "./Avatar.js";
 import Style from "../style/style.css";
 
+let userDetails = {
+    name: "דניאל עזרא",
+    job: "משוחרר",
+    unit: "אזרחות",
+    team: "אזרחי",
+    jobDesc: "אזרח חופשי ומאושר",
+    id: 6861599,
+    passport: 6861599,
+    rank: "אזרח!!",
+    clasification: "מסווג טילים",
+    phone: "051111 ואין שם אף אחד",
+    mobile: "052222",
+    mail: "gamba@gamba.com",
+    address: "באר שבע עיר הפשע",
+}
+
+const userAvatarStyle = {
+    position: "relative",
+    border: "3px solid rgb(145,182, 182)"
+    };
+
 class ProfHeader extends React.Component {
     render() {
         return (
         <div>
             <div className={Style.userDetails}>
                 <div className={Style.GeneralDetails}>
-                    <UserAvatar/>
+                    <UserAvatar size={170} style={userAvatarStyle}/>
                     <div className={Style.rightColDiv}>
                         <div className={Style.imgDetails}>
                             <div className={Style.mainJobTitle}>
-                                <span>שם מלא | תפקיד בחברה</span>
+                                <span> {userDetails.name} | {userDetails.job}</span>
                             </div>
                             <div className={Style.subJobTitle}>
-                                <span>חברה | מחלקה </span>
+                                <span> {userDetails.unit} | {userDetails.team} </span>
                             </div>
                             <div className={Style.jobDescrption}>
-                                <span>ראש צוות איפיון בחברה וכאן יהיה כל מיני תיאורים על העבודה עצמה והאופי שלה וכולי וכולי וכולי כל מיני
-                                    דברים
-                                </span>
+                                <span> {userDetails.jobDesc} </span>
                             </div>
                             <Profile/>
                         </div>
@@ -31,37 +50,37 @@ class ProfHeader extends React.Component {
                     <div className={Style.leftCol}>
                         <div className={Style.leftDivLine}>
                             <div className={Style.leftDivTitle}>מס' אישי:</div>
-                            <div className={Style.leftDivDetail}>6861599</div>
+                            <div className={Style.leftDivDetail}>{userDetails.id}</div>
                         </div>
                         <div className={Style.leftDivLine}>
                             <div className={Style.leftDivTitle}>תעודת זהות:</div>
-                            <div className={Style.leftDivDetail}>6861599</div>
+                            <div className={Style.leftDivDetail}>{userDetails.passport}</div>
                         </div>
                         <div className={Style.leftDivLine}>
                             <div className={Style.leftDivTitle}>דרגה:</div>
-                            <div className={Style.leftDivDetail}>סרן</div>
+                            <div className={Style.leftDivDetail}>{userDetails.rank}</div>
                         </div>
                         <div className={Style.leftDivLine}>
                             <div className={Style.leftDivTitle}>סיווג:</div>
-                            <div className={Style.leftDivDetail}>סודי ביותר</div>
+                            <div className={Style.leftDivDetail}>{userDetails.clasification}</div>
                         </div>
                     </div>
                     <div className={Style.rightCol}>
                         <div className={Style.leftDivLine}>
                             <div className={Style.rightDivTitle}>טלפון:</div>
-                            <div className={Style.leftDivDetail}>6861599</div>
+                            <div className={Style.leftDivDetail}>{userDetails.phone}</div>
                         </div>
                         <div className={Style.leftDivLine}>
                             <div className={Style.rightDivTitle}>נייד:</div>
-                            <div className={Style.leftDivDetail}>6861599</div>
+                            <div className={Style.leftDivDetail}>{userDetails.mobile}</div>
                         </div>
                         <div className={Style.leftDivLine}>
                             <div className={Style.rightDivTitle}>דוא"ל:</div>
-                            <div className={Style.leftDivDetail}>Tomer.i@ngsoft.com</div>
+                            <div className={Style.leftDivDetail}>{userDetails.mail}</div>
                         </div>
                         <div className={Style.leftDivLine}>
                             <div className={Style.rightDivTitle}>כתובת:</div>
-                            <div className={Style.leftDivDetail}>כתובת המגורים של העובד</div>
+                            <div className={Style.leftDivDetail}>{userDetails.address}</div>
                         </div>
                     </div>
                 </div>

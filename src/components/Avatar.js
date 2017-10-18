@@ -4,16 +4,15 @@ import Avatar from 'material-ui/Avatar';
 
 
 const UserAvatar = function (props) {
-    const style = {position: "relative",
-    border: "3px solid rgb(145,182, 182)"};
+    const image = "https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg";
 
     return (
       <div>
         <MuiThemeProvider>
             <Avatar
-            src="https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg"
-            size={170}
-            style={style}
+            src= {image}
+            size={props.size}
+            style={props.style}
             />
         </MuiThemeProvider>
       </div>

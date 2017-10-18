@@ -16,11 +16,12 @@
 
 .leftDiv{
     display: inline-flex;
-    width: 50%;
+    width: 78.9%;
     background-color: #D1DDDD;
     padding-top: 15px;
-    padding-right: 50px;
-    
+    padding-right: 26.6%;
+    margin-right: -3%;
+    padding-bottom: 3%;
 }
 
 .leftDivTitle{
