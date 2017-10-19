@@ -1,9 +1,18 @@
 import classes from './classes.css';
 
 const styles = {
-    column: {
-      width: '10%'
-    }
+  iconColumn: {
+    width: '2%',
+    padding: '0',
+    backgroundColor: '#90B7B6'       
+  },
+  emptyIconColumn: {
+    width: '2%',
+    padding: '0'
+  },
+  icon: {
+    width:'100%'
+  }
 };
 
 export const Styles = styles;

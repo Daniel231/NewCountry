@@ -5,10 +5,14 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Header from './common/Header';
 import TreeView from './common/TreeView';
-import GridList from './common/AvatarGridList';
-import Table from './UsersTable';
+import AvatarGridList from './common/AvatarGridList';
+import Table from './UserTable';
 import MainView from './MainView';
+import Demo from './DemoGrid';
 import Style from "../styles/App.css";
+
+import StarIcon from 'material-ui/svg-icons/toggle/star-border';
+import CakeIcon from 'material-ui/svg-icons/social/cake';
 
 
 
@@ -47,9 +51,9 @@ class App extends React.Component {
               <div className={Style.mainDiv}>
                <TopProfile/>
                <TreeView data={groups}/>
-               {/* <Table {...tableData}/>  */}
-               <GridList data={groups} titleField={'title'}/>
-                
+               {/* <Table users={tableData.data}/>  */}
+               {/* <AvatarGridList data={tableData.data} titleField={'name'} iconFunction = {getUserIcon}/> */}
+               <Demo/>
               </div>
             </div>
             </MuiThemeProvider>
@@ -131,8 +135,18 @@ let groups = [
 ];
 
 
+function getUserIcon(user) {
+  if(user.isAdmin) {
+    return CakeIcon;
+  } else if (user.isGroupAdmin) {
+    return StarIcon;
+  }
+  return null;
+}
+
+
 let tableData = {
-  data: [{name:"אלעד",role:"בוס"},{name:"יונתן",role:"עבד"}],
+  data: [{name:"אלעד",role:"בוס", isGroupAdmin:true},{name:"יונתן",role:"עבד",isAdmin:false}],
   headerCols: ["שם","תפקיד"],
   dataFields: ["name","role"]
 
