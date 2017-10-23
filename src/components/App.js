@@ -13,6 +13,7 @@ import Style from "../styles/App.css";
 
 
 injectTapEventPlugin();
+
 //configure the theme to work with RTL
 const uiTheme = getMuiTheme({
     isRtl: true

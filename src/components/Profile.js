@@ -89,9 +89,11 @@ export default class Profile extends React.Component {
                 <Dialog
                 title={userDetails.name + " | " + userDetails.job}
                 actions={actions}
+                modal={true}
                 open={this.state.open}
+                onRequestClose={handleClose.bind(this)}
                 titleStyle={customTitleStyle}
-                bodyStyle= {{backgroundColor: "rgb(228, 234, 234)", paddingBottom: "0px"}}
+                bodyStyle= {{backgroundColor: "rgb(228, 234, 234)", paddingBottom: "0px", overflowX:"hidden"}}
                 actionsContainerStyle={{backgroundColor: "rgb(33, 163, 151)", padding: "18px"}}
                 contentStyle={customContentStyle}
                 style={{borderRadius: "20px"}}
