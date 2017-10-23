@@ -89,7 +89,6 @@ export default class Profile extends React.Component {
                 <Dialog
                 title={userDetails.name + " | " + userDetails.job}
                 actions={actions}
-                modal={true}
                 open={this.state.open}
                 onRequestClose={handleClose.bind(this)}
                 titleStyle={customTitleStyle}
