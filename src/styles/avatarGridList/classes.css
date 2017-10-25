@@ -8,6 +8,17 @@
   padding-top: 10px;
 }
 
+.button {
+  max-height: 100px;
+}
+
+.avatar {
+  cursor: pointer;
+}
+.avatar:hover {
+  border: 3px solid rgb(145,182, 182)
+}
+
 
 
 
