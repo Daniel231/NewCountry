@@ -12,7 +12,7 @@ const GridTile = ({grow, shrink,children}) => {
 }
 
 GridTile.defaultProps = {
-    grow: 1,
+    grow: 0,
     shrink: 1
 };
 

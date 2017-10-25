@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GridContainer = ({children}) => {
-    const style = {
-        display:'flex',
-        flexFlow: 'column wrap'
-    }
+const style = {
+    display:'flex',
+    flexFlow: 'column wrap'
+}
+
+const GridContainer = ({children, maxWidth}) => {
+    const userStyle = maxWidth ? {maxWidth} : {};
+    const mergedStyle = Object.assign({}, style, userStyle);
     return (
-        <div style={style}>{children}</div>
+        <div style={mergedStyle}>{children}</div>
     );
 }
 
