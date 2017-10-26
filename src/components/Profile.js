@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Style from "../style/profile.css";
 import UserAvatar from "./Avatar.js";
+import Avatar from "./common/Avatar";
 
 export default class Profile extends React.Component {
     constructor(props) {
@@ -97,7 +98,7 @@ export default class Profile extends React.Component {
                 contentStyle={customContentStyle}
                 style={{borderRadius: "20px"}}
                 >
-                <UserAvatar size={150} style={userAvatarStyle}/>
+                <Avatar size={150} style={userAvatarStyle} src="https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg"/>
                 <span style={{color:"black"}}>
                         {userDetails.unit + " | " + userDetails.team}
                 </span>

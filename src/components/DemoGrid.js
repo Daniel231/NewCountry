@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import GridContainer from './common/grid/GridContainer';
 import GridRow from './common/grid/GridRow';
 import GridTile from './common/grid/GridTile';
-import Avatar from './common/Avatar';
+import Avatar from './user/UserAvatar';
 import ReactGridLayout from 'react-grid-layout';
 
 import StarIcon from 'material-ui/svg-icons/toggle/star-border';
@@ -25,14 +25,9 @@ import '../styles/grid/styles2.css';
 
 const img="https://vignette.wikia.nocookie.net/yugioh/images/7/74/RedEyesBDragon-OW.png/revision/latest/scale-to-width-down/185?cb=20140618033122";
 const style = {margin:'30px', maxWidth:'300px', minWidth:'100px'};
-const layout = [
-    {i: 'a', x: 0, y: 0, w: 1, h: 2},
-    {i: 'b', x: 1, y: 0, w: 1, h: 2},
-    {i: 'c', x: 2, y: 0, w: 1, h: 2},
-    {i: 'd', x: 0, y: 2, w: 1, h: 2},
-    {i: 'e', x: 1, y: 2, w: 1, h: 2}
-]
 
+const elad = {name:"אלעד",role:"בוס",isAdmin:true};
+const user = {name:"יונתן",role:" מאודעבד",isAdmin:false};
 
 const GridDemo = ({rtl, wrap, justifyContent, children}) => {
     return (
@@ -71,15 +66,14 @@ const GridDemo = ({rtl, wrap, justifyContent, children}) => {
         <div style={{width:'60%'}}>
             <GridContainer>
             <GridRow wrap>
-            <GridTile><Avatar badgeContent={<StarIcon color={white}/>} style={style} size={100} src={img} onClick={()=>{}}/></GridTile>
-            <GridTile><Avatar style={style} size={100} src={img} onClick={()=>{}}/></GridTile>
-            <GridTile><Avatar style={style} size={100} src={img}/></GridTile>
-            <GridTile><Avatar style={style} size={100} src={img}/></GridTile>
-            <GridTile><Avatar style={style} size={100} src={img}/></GridTile>
-            <GridTile><Avatar style={style} size={100} src={img}/></GridTile>
-            <GridTile><Avatar style={style} size={100} src={img}/></GridTile>
-            <GridTile><Avatar style={style} size={100} src={img}/></GridTile>
-            <GridTile><Avatar style={style} size={100} src={img}/></GridTile>
+            <GridTile><Avatar user={elad}/></GridTile>
+            <GridTile><Avatar user={user}/></GridTile>
+            <GridTile><Avatar user={user}/></GridTile>
+            <GridTile><Avatar user={user}/></GridTile>
+            <GridTile><Avatar user={user}/></GridTile>
+            <GridTile><Avatar user={user}/></GridTile>
+            <GridTile><Avatar user={user}/></GridTile>
+            <GridTile><Avatar user={user}/></GridTile>
 
 
             {/* <GridTile><div>dfgdgfdgdfgdfgdfgergerttertre</div></GridTile> */}
