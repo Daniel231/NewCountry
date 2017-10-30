@@ -18,8 +18,8 @@ import DefaultUserIcon from 'material-ui/svg-icons/social/person';
  *  isAdmin?
  * } 
  */
-const DefaultUserAvatar = <DefaultUserIcon color={white} style={{width: '100%', height:'100%'}}/>
-const Icon = <StarIcon color ={white}/>
+const DefaultUserAvatar = <DefaultUserIcon color={white} style={{width: '100%', height:'100%',backgroundColor:'#A0B7B6'}}/>
+const Icon = <StarIcon color ={white} />
 
 const defaultStyles = {
     root: {
