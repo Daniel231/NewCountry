@@ -21,7 +21,6 @@ class SortAndSearch extends React.Component {
     
     render() {
         return (
-            <div>
                 <div className={Style.sortAndSearchDiv}>
                     <div className={Style.teamDiv}>
                         <GroupIcon color={black}/>
@@ -51,7 +50,6 @@ class SortAndSearch extends React.Component {
                     <ModuleIcon color= {blueGrey200}/>
                     <ListIcon color = {blueGrey200}/>
                 </div>
-            </div>
         );
     }
 }

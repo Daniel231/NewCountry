@@ -53,10 +53,12 @@ class App extends React.Component {
               <div className={Style.mainDiv}>
                <TopProfile/>
                <TreeView data={groups}/>
+               <div style={{width:"80%"}}>
+               <SortAndSearch/>
+               <Demo/>
+               </div>
                {/* <Table users={tableData.data}/>  */}
                {/* <AvatarGridList data={tableData.data} titleField={'name'} iconFunction = {getUserIcon}/> */}
-               {/* <SortAndSearch/> */}
-               <Demo/>
               </div>
             </div>
             </MuiThemeProvider>

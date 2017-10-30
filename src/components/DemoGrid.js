@@ -68,7 +68,7 @@ const GridDemo = ({rtl, wrap, justifyContent, children}) => {
         //     </GridRow>
         // </GridContainer>
 
-        <div style={{width:'60%'}}>
+        <div >
             <GridContainer>
             <GridRow wrap>
             <GridTile><Avatar badgeContent={<StarIcon color={white}/>} style={style} size={100} src={img} onClick={()=>{}}/></GridTile>
