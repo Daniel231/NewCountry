@@ -63,7 +63,7 @@ const GridDemo = ({rtl, wrap, justifyContent, children}) => {
         //     </GridRow>
         // </GridContainer>
 
-        <div style={{width:'60%'}}>
+        <div >
             <GridContainer>
             <GridRow wrap>
             <GridTile><Avatar user={elad}/></GridTile>
