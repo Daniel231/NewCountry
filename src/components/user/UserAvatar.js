@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Avatar from '../common/Avatar';
+import Avatar from './styledComponents/avatar';
 // default Icons
 import StarIcon from 'material-ui/svg-icons/toggle/star-border';
 import {white, green100} from 'material-ui/styles/colors';
@@ -18,7 +18,7 @@ import DefaultUserIcon from 'material-ui/svg-icons/social/person';
  *  isAdmin?
  * } 
  */
-const DefaultUserAvatar = <DefaultUserIcon color={white} style={{width: '100%', height:'100%',backgroundColor:'#A0B7B6'}}/>
+const DefaultUserAvatar = <DefaultUserIcon color={white} style={{width: '100%', height:'100%',backgroundColor:'#A0B7B6', borderBottomLeftRadius:'50%'}}/>
 const Icon = <StarIcon color ={white} />
 
 const defaultStyles = {
@@ -42,7 +42,7 @@ const UserAvatar = ({user,style}) => {
     const rootStyle = Object.assign({}, defaultStyles.root, style);
     return (
     <div style={rootStyle}>
-        <Avatar badgeContent = {Badge} size ={100} onClick={()=>{}}>
+        <Avatar badgeContent = {Badge} size ={100} onClick={()=>{} }>
             {DefaultUserAvatar}
         </Avatar>
         <div style={defaultStyles.title}>
