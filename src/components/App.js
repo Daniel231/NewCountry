@@ -4,9 +4,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Header from './common/Header';
-import TreeView from './common/TreeView';
+import TreeView from './treeList/TreeView';
 import AvatarGridList from './common/AvatarGridList';
-import Table from './UserTable';
+import Table from './user/UsersTable';
 import MainView from './MainView';
 import Demo from './DemoGrid';
 import Style from "../styles/App.css";
@@ -54,10 +54,11 @@ class App extends React.Component {
                <TopProfile/>
                <TreeView data={groups}/>
                <div style={{width:"80%"}}>
-               <SortAndSearch/>
+               {/* <SortAndSearch/> */}
                <Demo/>
+               {/* <Table {...tableData}/>  */}
                </div>
-               {/* <Table users={tableData.data}/>  */}
+               
                {/* <AvatarGridList data={tableData.data} titleField={'name'} iconFunction = {getUserIcon}/> */}
               </div>
             </div>

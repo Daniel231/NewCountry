@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Avatar from './styledComponents/avatar';
 // default Icons
 import StarIcon from 'material-ui/svg-icons/toggle/star-border';
 import {white, green100} from 'material-ui/styles/colors';
 import CakeIcon from 'material-ui/svg-icons/social/cake';
-import DefaultUserIcon from 'material-ui/svg-icons/social/person';
-
+import DefaultUserIcon from './styledComponents/icons/defaultUserIcon';
+import {adminIcon as AdminIcon} from './styledComponents/icons/badgeIcons';
 
 /**
  * user: {
@@ -18,9 +19,22 @@ import DefaultUserIcon from 'material-ui/svg-icons/social/person';
  *  isAdmin?
  * } 
  */
-const DefaultUserAvatar = <DefaultUserIcon color={white} style={{width: '100%', height:'100%',backgroundColor:'#A0B7B6', borderBottomLeftRadius:'50%'}}/>
-const Icon = <StarIcon color ={white} />
 
+const Container = styled.div`
+    margin: 10px;
+`;
+
+const Title = styled.span`
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+`;
+
+const SubTitle = Title.extend`
+    font-weight: 400;
+    color: grey;
+`;
 const defaultStyles = {
     root: {
         margin: '10px'
@@ -38,19 +52,17 @@ const defaultStyles = {
 
 
 const UserAvatar = ({user,style}) => {
-    const Badge = user.isAdmin ? Icon : null;
+    const Badge = user.isAdmin ? <AdminIcon/> : null;
     const rootStyle = Object.assign({}, defaultStyles.root, style);
     return (
     <div style={rootStyle}>
         <Avatar badgeContent = {Badge} size ={100} onClick={()=>{} }>
-            {DefaultUserAvatar}
+            {<DefaultUserIcon/>}
         </Avatar>
-        <div style={defaultStyles.title}>
-            {user.name}
-        </div>
-        <div style={defaultStyles.subTitle}>
-            {user.role}
-        </div>
+        
+        <Title>{user.name}</Title>
+        <SubTitle>{user.role}</SubTitle>
+        
     </div>
     );
 };

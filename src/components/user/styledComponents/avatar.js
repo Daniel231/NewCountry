@@ -10,4 +10,9 @@ const StyledAvatar = styled(Avatar).attrs({
     }
 })``;
 
+const Small = styled(StyledAvatar).attrs({
+    size: 35
+})``;
+
+export const smallAvatar = Small;
 export default StyledAvatar;

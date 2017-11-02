@@ -9,27 +9,22 @@ import {
     TableHeaderColumn,
     TableRow,
     TableRowColumn} from 'material-ui/Table';
-import Avatar from 'material-ui/Avatar';
-import DefaultUserIcon from 'material-ui/svg-icons/social/person';
+import {smallAvatar as Avatar} from './styledComponents/avatar';
+import DefaultIcon from './styledComponents/icons/defaultUserIcon';
 // import Classes from '../styles/usersTable/classes.css';
-import {Classes, Styles} from '../styles/usersTable';
 
 
 
-const tHead = styled(TableHeader).attrs({
-  displaySelectAll: false,
-  adjustForCheckbox: false
-})``;
+const Container = styled.div`
+  margin: 2%;
+  width: 80%
+`;
 
-const avatarColumn = styled(TableRowColumn).attrs({
-  style: {
+const Styles = {
+  avatarColumn: {
     width: '10%'
   }
-})``;
-
-const avatarHeader = avatarColumn.withComponent(TableHeaderColumn);
-
-
+}
 
 function select(e,v){
 console.log("selsct");
@@ -37,13 +32,13 @@ console.log("selsct");
 
 const UsersTable = ({data, headerCols, dataFields, avatarField, onSelect}) => {
   return (
-    <div className={Classes.container}>
+   <Container>
     <Table onRowSelection={onSelect}>
-      <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+      <TableHeader displaySelectAll= {false} adjustForCheckbox={false}>
         <TableRow>
-          <TableHeaderColumn className={Classes.avatarColumn}></TableHeaderColumn>
+          <TableHeaderColumn style={Styles.avatarColumn}/>
           {headerCols.map((header, i) => 
-          <TableHeaderColumn className={Classes.headerColumn} key={i}>
+          <TableHeaderColumn key={i}>
               {header}
           </TableHeaderColumn>)}
         </TableRow>
@@ -51,20 +46,21 @@ const UsersTable = ({data, headerCols, dataFields, avatarField, onSelect}) => {
       <TableBody displayRowCheckbox={false}>
         {data.map((dataRow, index) => 
         <TableRow key={index}>
-          <TableRowColumn className={Classes.avatarColumn}>
+          <TableRowColumn style={Styles.avatarColumn}>
             {avatarField ? 
             <Avatar src="https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg"/>:
-            <Avatar><DefaultUserIcon/></Avatar>}      
+            <Avatar><DefaultIcon/></Avatar>}      
           </TableRowColumn>
           {dataFields.map((field,i) => 
-          <TableRowColumn className={Classes.column} key={i}>
+          <TableRowColumn key={i}>
             {dataRow[field]}
           </TableRowColumn>)}
             
         </TableRow>)}
       </TableBody>
     </Table>
-    </div>
+    </Container>
+    
   );
 };
 

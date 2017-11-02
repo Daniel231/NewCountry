@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Style from "../style/profile.css";
 import UserAvatar from "./Avatar.js";
-import Avatar from "./common/avatar/Avatar";
+import Avatar from "./user/styledComponents/avatar";
 
 export default class Profile extends React.Component {
     constructor(props) {

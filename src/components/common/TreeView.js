@@ -86,7 +86,7 @@ function extendListItem(ListItemComponent){
           <ExpandMoreIcon color={black}/>;
       }
       return (
-        <ListItemComponent 
+        <ListItemComponent
           {...this.props}
           leftIcon ={leftIcon}
           onNestedListToggle={this.onToggle}

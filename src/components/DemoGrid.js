@@ -26,7 +26,7 @@ import '../styles/grid/styles2.css';
 const img="https://vignette.wikia.nocookie.net/yugioh/images/7/74/RedEyesBDragon-OW.png/revision/latest/scale-to-width-down/185?cb=20140618033122";
 const style = {margin:'30px', maxWidth:'300px', minWidth:'100px'};
 
-const elad = {name:"אלעד",role:"בוס",isAdmin:true};
+const elad = {name:"אלעד התותח",role:"בוס",isAdmin:true};
 const user = {name:"יונתן",role:" מאודעבד",isAdmin:false};
 
 const GridDemo = ({rtl, wrap, justifyContent, children}) => {
