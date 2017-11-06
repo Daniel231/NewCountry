@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
-import Profile from "./Profile.js";
-import UserAvatar from "./Avatar.js";
-import Style from "../style/style.css";
+import Profile from './Profile';
+import {ProfileAvatar as UserAvatar} from './styledComponents/avatar';
+import Style from "../../style/style.css";
 
 let userDetails = {
     name: "דניאל עזרא",
@@ -19,10 +19,9 @@ let userDetails = {
     address: "באר שבע עיר הפשע",
 }
 
-const userAvatarStyle = {
-    position: "relative",
-    border: "3px solid rgb(145,182, 182)"
-    };
+
+
+const img = 'https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg';
 
 class ProfHeader extends React.Component {
     render() {
@@ -30,7 +29,7 @@ class ProfHeader extends React.Component {
         <div>
             <div className={Style.userDetails}>
                 <div className={Style.GeneralDetails}>
-                    <UserAvatar size={170} style={userAvatarStyle}/>
+                    <UserAvatar size={170} src ={img}/>
                     <div className={Style.rightColDiv}>
                         <div className={Style.imgDetails}>
                             <div className={Style.mainJobTitle}>

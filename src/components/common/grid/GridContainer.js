@@ -6,11 +6,11 @@ const style = {
     flexFlow: 'column wrap'
 }
 
-const GridContainer = ({children, maxWidth}) => {
+const GridContainer = ({children, maxWidth, className}) => {
     const userStyle = maxWidth ? {maxWidth} : {};
     const mergedStyle = Object.assign({}, style, userStyle);
     return (
-        <div style={mergedStyle}>{children}</div>
+        <div className={className} style={mergedStyle}>{children}</div>
     );
 }
 

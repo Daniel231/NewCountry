@@ -2,12 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import {List, ListItem, makeSelectable} from 'material-ui/List';
-
-import ExpandLessIcon from 'material-ui/svg-icons/navigation/expand-less';
-import ExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
-import GroupIcon from 'material-ui/svg-icons/social/group';
 import IconButton from 'material-ui/IconButton';
-import {black} from 'material-ui/styles/colors';
+import {ExpandLessIcon, ExpandMoreIcon, LeafIcon} from './icons';
 
 import Styles from './styles';
 import wrapState from './wrapState';
@@ -17,9 +13,7 @@ let SelectableList = makeSelectable(List);
 SelectableList = wrapState(SelectableList);
 
 
-const styledExpandMore = <ExpandMoreIcon color={black}/>;
-const styledExpandLess = <ExpandLessIcon color={black}/>;
-const styledLeafIcon = <GroupIcon color={black}/>;
+
 
 
 /**
@@ -33,9 +27,9 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
     return (
       <MyListItem
         style = {Styles.listItem}
-        expandLessIcon = {styledExpandLess}
-        expandMoreIcon = {styledExpandMore}
-        leafIcon = {styledLeafIcon}
+        expandLessIcon = {ExpandLessIcon}
+        expandMoreIcon = {ExpandMoreIcon}
+        leafIcon = {LeafIcon}
         nestedListStyle = {Styles.nestedList}
         value = {value}
         key = {index}

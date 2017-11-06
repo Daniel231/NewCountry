@@ -4,7 +4,8 @@ const styles = {
         marginTop: '4px',
         padding: 0,
         boxShadow: '0 0 10px 1px rgba(0,0,0,0.6)',
-        backgroundColor: 'white'    
+        backgroundColor: 'white',
+        minWidth: 'max-content'
     },
     selectedItem: {
         backgroundColor:'#009688', 
@@ -20,13 +21,6 @@ const styles = {
     },
     nestedList: {
         padding: 0
-    },
-    openItem: {
-        padding: 0,
-        backgroundColor: '#D1DDDD',
-        fontWeight: '600',
-        // borderBottom: 'solid 1px #CCD1D5',
-        fontSize: '14px'        
     }
 };
 

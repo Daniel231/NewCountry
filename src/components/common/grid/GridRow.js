@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GridRow = ({rtl, wrap, justifyContent, children}) => {
+const GridRow = ({rtl, wrap, justifyContent, className, children}) => {
     const style = {
         display:'flex',
         width:'100%',
@@ -9,7 +9,7 @@ const GridRow = ({rtl, wrap, justifyContent, children}) => {
         justifyContent: `${justifyContent}`
     };
     return (
-        <div style={style}>{children}</div>
+        <div className={className} style={style}>{children}</div>
     );
 };
 

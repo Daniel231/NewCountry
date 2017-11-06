@@ -1,14 +1,12 @@
 import React, {PropTypes} from 'react';
-import ProfHeader from "./ProfHeader.js";
+import ProfHeader from "./user/ProfHeader";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Header from './common/Header';
 import TreeView from './treeList/TreeView';
-import AvatarGridList from './common/AvatarGridList';
 import Table from './user/UsersTable';
-import MainView from './MainView';
-import Demo from './DemoGrid';
+import Grid from './user/UsersGrid';
 import Style from "../styles/App.css";
 import SortAndSearch from './SortAndSearch';
 
@@ -34,28 +32,20 @@ const TopProfile = () => {
   );
 };
 
-// const MainView = () => {
-//   return (
-//     <div className= {Style.main_view}>
-//       <div style={{marginRight:"2%",marginTop:"2%"}}><Table data={[{name:"אלעד",role:"בוס"},{name:"יונתן",role:"עבד"}]} headerCols={["שם","תפקיד"]} dataFields={["name","role"]} /></div>
-      
-//     </div>
-//   )
-// }
 
 class App extends React.Component {
     render() {
         return (
           
             <MuiThemeProvider muiTheme={uiTheme}>
-            <div className={Style.hebrew}>
+            <div style={{height:'100vh'}} className={Style.hebrew}>
               <Header title="הגינה של סלדג"/>
-              <div className={Style.mainDiv}>
+              <div  className={Style.mainDiv}>
                <TopProfile/>
                <TreeView data={groups}/>
                <div style={{width:"80%"}}>
                {/* <SortAndSearch/> */}
-               <Demo/>
+               <Grid users={tableData.users} onAvatarClick={(u)=>{console.log(u)}}/>
                {/* <Table {...tableData}/>  */}
                </div>
                
@@ -152,7 +142,11 @@ function getUserIcon(user) {
 
 
 let tableData = {
-  data: [{name:"אלעד",role:"בוס", isGroupAdmin:true},{name:"יונתן",role:"עבד",isAdmin:false}],
+  users: [
+    {name:"אלעד",role:"בוס", isGroupAdmin:true},{name:"יונתן",role:"עבד",isAdmin:false},
+    {name:"יונתן",role:"עבד",isAdmin:false},{name:"יונתן",role:"עבד",isAdmin:false},
+    {name:"יונתן",role:"עבד",isAdmin:false},{name:"יונתן",role:"עבד",isAdmin:true}
+  ],
   headerCols: ["שם","תפקיד"],
   dataFields: ["name","role"]
 

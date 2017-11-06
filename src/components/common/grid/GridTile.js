@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GridTile = ({grow, shrink,children}) => {
+const GridTile = ({grow, shrink, children, className}) => {
     const style = {
         display:'flex',
         flex: `${grow} ${shrink}`
     }
     return (
-        <div style={style}>{children}</div>
+        <div className={className} style={style}>{children}</div>
     );
 }
 
