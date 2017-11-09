@@ -26,7 +26,7 @@ const img = 'https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg';
 class ProfHeader extends React.Component {
     render() {
         return (
-        <div>
+        <div style ={{width:'100%'}}>
             <div className={Style.userDetails}>
                 <div className={Style.GeneralDetails}>
                     <UserAvatar size={170} src ={img}/>

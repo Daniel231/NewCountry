@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {GridContainer, GridTile, GridRow} from '../common/grid';
-import Avatar from './UserAvatar';
+import {GridContainer, GridTile, GridRow} from '../../common/grid';
+import Avatar from './DetailAvatar';
 
 const Container = styled(GridContainer)`
     width: 100%;
 `;
 const Tile = styled(GridTile)`
-margin: 20px;
+    margin: 20px;
 `;
 
 const UsersGridView = ({users, onAvatarClick}) => {

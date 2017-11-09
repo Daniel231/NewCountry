@@ -11,8 +11,7 @@ import {
     TableRowColumn} from 'material-ui/Table';
 import {smallAvatar as Avatar} from './styledComponents/avatar';
 import DefaultIcon from './styledComponents/icons/defaultUserIcon';
-import {adminIcon as GroupAdminIcon, superAdminIcon as AdminIcon} from './styledComponents/icons/badgeIcons';
-
+import {getUserBadgeIcon} from './helpers';
 
 /**
  * user: {
@@ -37,17 +36,23 @@ const IconContainer = styled.div`
   align-items: center;
   height: 100%;
 `;
-const sAdminIcon = <IconContainer><AdminIcon/></IconContainer>
-const sGroupAdminIcon = <IconContainer><GroupAdminIcon/></IconContainer>
 
 const Styles = {
+  wrapper: {
+    width: '80%',
+    maxHeight:'440px',
+    margin: '2%',
+    overflow: 'auto'
+  },
   avatarColumn: {
-    width: '6%'
+    width: '6%',
+    minWidth: '0'
   },
   iconColumn: {
     width: '3%',
     // backgroundColor:'#90B7B6',
-    padding:0
+    padding:0,
+    minWidth: '0'
   },
   iconColumnHeader: {
     width: '3%',
@@ -58,8 +63,8 @@ const Styles = {
 
 const UsersTable = ({users, headerCols, dataFields, onSelect}) => {
   return (
-   <Container>
-    <Table onRowSelection={onSelect}>
+  //  <Container>
+    <Table fixedHeader onRowSelection={onSelect} wrapperStyle={Styles.wrapper}>
       <TableHeader displaySelectAll= {false} adjustForCheckbox={false}>
         <TableRow>
           <TableHeaderColumn style={Styles.iconColumnHeader}/>
@@ -71,25 +76,27 @@ const UsersTable = ({users, headerCols, dataFields, onSelect}) => {
         </TableRow>
       </TableHeader>
       <TableBody displayRowCheckbox={false}>
-        {users.map((user, index) => 
-        <TableRow key={index}>
-          <TableRowColumn style={Styles.iconColumn}>
-            {user.isGroupAdmin ? sGroupAdminIcon : user.isAdmin ? sAdminIcon : null}
-          </TableRowColumn>
-          <TableRowColumn style={Styles.avatarColumn}>
-            {user.avatar ? 
-            <Avatar src="https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg"/>:
-            <Avatar><DefaultIcon/></Avatar>}      
-          </TableRowColumn>
-          {dataFields.map((field,i) => 
-          <TableRowColumn key={i}>
-            {user[field]}
-          </TableRowColumn>)}
-            
-        </TableRow>)}
+        {users.map((user, index) => {
+          const Badge = getUserBadgeIcon(user);
+          const Icon = Badge ? <IconContainer><Badge/></IconContainer> : null;
+          return (
+          <TableRow key={index}>
+            <TableRowColumn style={Styles.iconColumn}>
+              {Icon}
+            </TableRowColumn>
+            <TableRowColumn style={Styles.avatarColumn}>
+              {user.avatar ? 
+              <Avatar src="https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg"/>:
+              <Avatar><DefaultIcon/></Avatar>}      
+            </TableRowColumn>
+            {dataFields.map((field,i) => 
+            <TableRowColumn key={i}>
+              {user[field]}
+            </TableRowColumn>)} 
+          </TableRow>);})}
       </TableBody>
     </Table>
-    </Container>
+    // </Container>
     
   );
 };

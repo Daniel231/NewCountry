@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Avatar from './styledComponents/avatar';
+import Avatar from '../../styledComponents/avatar';
 // default Icons
-import StarIcon from 'material-ui/svg-icons/toggle/star-border';
-import {white, green100} from 'material-ui/styles/colors';
-import DefaultUserIcon from './styledComponents/icons/defaultUserIcon';
-import {adminIcon as GroupAdminIcon, superAdminIcon as AdminIcon} from './styledComponents/icons/badgeIcons';
+import DefaultUserIcon from '../../styledComponents/icons/defaultUserIcon';
+import {getUserBadgeIcon} from '../../helpers';
 
 /**
  * user: {
@@ -49,10 +47,11 @@ class UserAvatar extends React.Component {
 
     render() {
         const {user} = this.props;
-        const Badge = user.isGroupAdmin ? <GroupAdminIcon/> : user.isAdmin ? <AdminIcon/> : null;
+        const Badge = getUserBadgeIcon(user);
+        const bContent = Badge ? <Badge/> : null;
         return (
         <Container>
-            <Avatar badgeContent = {Badge} size ={100} onClick={this.onClick}>
+            <Avatar badgeContent = {bContent} size ={100} onClick={this.onClick}>
                 {<DefaultUserIcon/>}
             </Avatar>
             
