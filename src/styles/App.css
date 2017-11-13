@@ -1,0 +1,19 @@
+html,body {
+	height: 100%;
+	font-family: sans-serif;
+	overflow: hidden;
+}
+
+.mainDiv {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.hebrew {
+	direction: rtl;
+	/* float: right; */
+}
+.profile {
+	direction: rtl;
+	width:100%;
+}

@@ -1,0 +1,80 @@
+.userDetails {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 2px 5px #888888;
+}
+
+.GeneralDetails {
+    background-color: rgb(227, 234, 233);
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding-top: 15px;
+}
+
+.leftDiv{
+    display: inline-flex;
+    width: 78.9%;
+    background-color: #D1DDDD;
+    padding-top: 15px;
+    padding-right: 26.6%;
+    margin-right: -3%;
+    padding-bottom: 3%;
+}
+
+.leftDivTitle{
+    display: inline-flex;
+    color:#7B8A8D;
+    font-size: 12px;
+    width: 39%;
+}
+.rightDivTitle {
+    display: inline-flex;
+    color: #7B8A8D;
+    font-size: 12px;
+    width: 29%;
+}
+.leftDivDetail{
+    display: inline-block;
+    font-size: 12px;
+}
+.leftDivLine{
+    line-height: 29px;
+}
+.leftCol{
+    width: 30%;
+    border-left: dashed 2px #A6B2B2;
+    height: 81%;
+}
+.rightCol{
+    width: 30%;
+    margin-right: 30px;
+}
+.leftColDiv{
+    margin-right: 8.5%;
+}
+.rightColDiv{
+    display: flex;
+    width: 50%;
+    margin-right: 30px;
+}
+.imgDetails{
+    display: inline-block;
+    margin-right: 58px;
+    margin-top: 8px;
+}
+.mainJobTitle{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.subJobTitle{
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+.jobDescrption{
+    display: inline-block;
+    font-size: 12px;
+}
