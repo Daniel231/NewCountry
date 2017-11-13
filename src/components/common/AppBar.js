@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from 'material-ui/AppBar';
+import AppBarMui from 'material-ui/AppBar';
 
-const Header = ({title}) => {
+const AppBar = ({title}) => {
   return (
-    <AppBar
+    <AppBarMui
       title={title}
       className="hebrew"
     />
   );
 };
 
-Header.propTypes = {
+AppBar.propTypes = {
   title: PropTypes.string
 };
 
-export default Header;
+export default AppBar;

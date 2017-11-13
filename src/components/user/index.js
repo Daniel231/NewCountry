@@ -1,7 +1,7 @@
-import profile from './Profile';
-import profileHeader from './ProfHeader';
-import grid from './Grid/UsersGrid';
-import table from './UsersTable';
+import profile from './Profile/Profile';
+import profileHeader from './Profile/ProfHeader';
+import grid from './Grid';
+import table from './Table';
 
 
 export const ProfileHeader = profileHeader;

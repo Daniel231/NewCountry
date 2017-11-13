@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {GridContainer, GridTile, GridRow} from '../../common/grid';
+import {GridContainer, GridTile, GridRow} from '../../shared/grid';
 import Avatar from './DetailAvatar';
 
 const Container = styled(GridContainer)`

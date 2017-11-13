@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
-import styled from 'styled-components';
 import {
     Table,
     TableBody,
@@ -9,9 +8,13 @@ import {
     TableHeaderColumn,
     TableRow,
     TableRowColumn} from 'material-ui/Table';
-import {smallAvatar as Avatar} from './styledComponents/avatar';
-import DefaultIcon from './styledComponents/icons/defaultUserIcon';
-import {getUserBadgeIcon} from './helpers';
+//styled components & styles object
+import {smallAvatar as Avatar} from '../styledComponents/avatar';
+import DefaultIcon from '../styledComponents/icons/defaultUserIcon';
+import {IconContainer} from './styled/Container';
+import Styles from './styled/styles';
+
+import {getUserBadgeIcon} from '../helpers';
 
 /**
  * user: {
@@ -23,44 +26,6 @@ import {getUserBadgeIcon} from './helpers';
  *  isAdmin?
  * } 
  */
-
-const Container = styled.div`
-  margin: 2%;
-  width: 80%
-`;
-
-const IconContainer = styled.div`
-  display: flex;
-  background-color: #90B7B6;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-`;
-
-const Styles = {
-  wrapper: {
-    width: '80%',
-    maxHeight:'440px',
-    margin: '2%',
-    overflow: 'auto'
-  },
-  avatarColumn: {
-    width: '6%',
-    minWidth: '0'
-  },
-  iconColumn: {
-    width: '3%',
-    // backgroundColor:'#90B7B6',
-    padding:0,
-    minWidth: '0'
-  },
-  iconColumnHeader: {
-    width: '3%',
-    padding:0    
-  }
-}
-
-
 const UsersTable = ({users, headerCols, dataFields, onSelect}) => {
   return (
   //  <Container>

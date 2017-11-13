@@ -5,6 +5,8 @@ import Avatar from '../../styledComponents/avatar';
 // default Icons
 import DefaultUserIcon from '../../styledComponents/icons/defaultUserIcon';
 import {getUserBadgeIcon} from '../../helpers';
+// styled components
+import {Primary as PrimaryTitle, Secondary as SecondaryTitle} from './styled/Title';
 
 /**
  * user: {
@@ -20,17 +22,7 @@ import {getUserBadgeIcon} from '../../helpers';
 const Container = styled.div`
 `;
 
-const Title = styled.span`
-    display: block;
-    font-weight: 600;
-    font-size: 14px;
-    text-align: center;
-`;
 
-const SubTitle = Title.extend`
-    font-weight: 400;
-    color: grey;
-`;
 
 class UserAvatar extends React.Component {
     constructor(props) {
@@ -55,8 +47,8 @@ class UserAvatar extends React.Component {
                 {<DefaultUserIcon/>}
             </Avatar>
             
-            <Title>{user.name}</Title>
-            <SubTitle>{user.role}</SubTitle>
+            <PrimaryTitle>{user.name}</PrimaryTitle>
+            <SecondaryTitle>{user.role}</SecondaryTitle>
             
         </Container>
         );

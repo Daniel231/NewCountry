@@ -2,8 +2,8 @@ import React, {PropTypes} from 'react';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Style from "../../style/profile.css";
-import Avatar from "./styledComponents/avatar";
+import Style from "./profile.css";
+import Avatar from "../styledComponents/avatar";
 
 export default class Profile extends React.Component {
     constructor(props) {

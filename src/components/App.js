@@ -2,11 +2,7 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import ProfHeader from "./user/ProfHeader";
-import Header from './common/Header';
-import TreeView from './treeList/TreeView';
-import Table from './user/UsersTable';
-import SortAndSearch from './SortAndSearch';
+import Header from './common/AppBar';
 import Style from "../styles/App.css";
 
 import MainView from './views/MainView';
@@ -17,16 +13,6 @@ injectTapEventPlugin();
 const uiTheme = getMuiTheme({
   isRtl: true,
 });
-
-
-const TopProfile = () => {
-  return (
-    <div className={Style.profile}>
-      <ProfHeader />
-    </div>
-  );
-};
-
 
 class App extends React.Component {
   render() {

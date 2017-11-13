@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Avatar from '../../common/avatar/Avatar';
+import Avatar from '../../shared/avatar';
 
 const StyledAvatar = styled(Avatar).attrs({
     badgeStyle: {
@@ -10,13 +10,12 @@ const StyledAvatar = styled(Avatar).attrs({
     }
 })``;
 
-
 const profileAvatar = styled(StyledAvatar).attrs({
-    innerStyle: {
-        boxShadow: '0 0 10px 1px rgba(0,0,0,0.6)',
-        position: 'relative',
-        border: '3px solid rgb(145,182, 182)'
-    }
+    innerStyle: props => Object.assign({}, props.innerStyle, 
+        {
+            border: '3px solid rgb(145,182, 182)', 
+            position: 'relative'
+        })
 })``;
 
 const Small = styled(StyledAvatar).attrs({

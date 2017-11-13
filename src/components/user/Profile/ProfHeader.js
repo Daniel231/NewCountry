@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import Profile from './Profile';
-import {ProfileAvatar as UserAvatar} from './styledComponents/avatar';
-import Style from "../../style/style.css";
+import {ProfileAvatar as UserAvatar} from '../styledComponents/avatar';
+import Style from "./style.css";
 
 let userDetails = {
     name: "דניאל עזרא",

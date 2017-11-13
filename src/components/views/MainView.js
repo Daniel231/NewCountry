@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {GridContainer, GridRow, GridTile} from '../common/grid';
+import {GridContainer, GridRow, GridTile} from '../shared/grid'
 import {UsersGrid, ProfileHeader, UsersTable} from '../user';
-import SideMenu from '../treeList';
+import SideMenu from '../group/treeList';
 
 
 const Container = styled(GridContainer)`
