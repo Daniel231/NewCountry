@@ -1,5 +1,5 @@
 import profile from './Profile/Profile';
-import profileHeader from './Profile/ProfHeader';
+import profileHeader from './Profile/ProfileHeader';
 import grid from './Grid';
 import table from './Table';
 

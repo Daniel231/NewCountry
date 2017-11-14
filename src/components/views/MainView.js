@@ -22,7 +22,7 @@ const MainView = () => {
     return (
         <Container>
             <GridRow>
-                <GridTile basis={'100%'}><ProfileHeader/></GridTile>
+                <GridTile basis={'100%'}><ProfileHeader userDetails={userDetails}/></GridTile>
             </GridRow>
             <ScreenRow>
                 <GridTile basis={'16%'}><SideMenu data={groups}/></GridTile>
@@ -34,6 +34,23 @@ const MainView = () => {
 }
 
 export default MainView;
+
+
+let userDetails = {
+  name: "דניאל עזרא",
+  job: "משוחרר",
+  unit: "אזרחות",
+  team: "אזרחי",
+  jobDesc: "אזרח חופשי ומאושר",
+  id: 6861599,
+  passport: 6861599,
+  rank: "אזרח!!",
+  clasification: "מסווג טילים",
+  phone: "051111 ואין שם אף אחד",
+  mobile: "052222",
+  mail: "gamba@gamba.com",
+  address: "באר שבע עיר הפשע",
+}
 
 
 let groups = [
