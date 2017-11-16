@@ -52,18 +52,18 @@ export default class Profile extends React.Component {
                "צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש." +
                "קוויז דומור ליאמום בלינך רוגצה. לפמעט",
               name: "דניאל עזרא",
-              job: "משוחרר",
-              unit: "אזרחות",
-              team: "אזרחי",
+              job: "מעצב",
+              unit: "כלשהי",
+              team: "עיצוב",
               jobDesc: "אזרח חופשי ומאושר",
               id: 6861599,
               passport: 6861599,
               rank: "אזרח!!",
-              clasification: "מסווג טילים",
-              phone: "051111 ואין שם אף אחד",
+              clasification: "מסווג",
+              phone: "051111",
               mobile: "052222",
               mail: "gamba@gamba.com",
-              address: "באר שבע עיר הפשע",
+              address: "באר שבע",
               groups: ["הפרלמנט", "פאור ריינג'רס"]
           }
 

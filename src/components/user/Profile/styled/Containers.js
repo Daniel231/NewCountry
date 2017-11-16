@@ -5,6 +5,7 @@ export const UserDetails = styled.div`
     display: flex;
     flex-direction: row;
     box-shadow: 1px 2px 5px #888888;
+    /* align-items: flex-start; */
 `;
 
 export const Span = styled.div`
@@ -31,11 +32,12 @@ export const BasicInfoText = styled.div`
 `;
 
 export const BasicInfo = styled.div`
-    background-color: rgb(227, 234, 233);
     direction: rtl;
     display: flex;
     justify-content: flex-start;
-    width: 50%;
+    background-color: rgb(227, 234, 233);
+    flex-grow: 1;
+    /* width: 50%; */
     padding-top: 8px;
     padding-bottom: 8px;
     padding-right: 3%;
@@ -43,7 +45,8 @@ export const BasicInfo = styled.div`
 
 export const ExtendedUserDetails = styled.div`
     display: inline-flex;
-    width: 50%;
+    flex-grow: 1;
+    /* width: 50%; */
     background-color: #D1DDDD;
     padding-top: 15px;
     padding-right: 50px;
