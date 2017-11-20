@@ -12,10 +12,6 @@ import MyListItem from './ListItem';
 let SelectableList = makeSelectable(List);
 SelectableList = wrapState(SelectableList);
 
-
-
-
-
 /**
  * creates array of ListItem's JSX according to the tree data array
  */
@@ -40,8 +36,8 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
           valueField, 
           childrenField
         })}
-        primaryTogglesNestedList = {true}
-        insetChildren = {true}
+        primaryTogglesNestedList
+        insetChildren
         autoGenerateNestedIndicator={false}/>
     );
   });

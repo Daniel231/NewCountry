@@ -1,9 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { ProfileAvatar as UserAvatar } from '../styledComponents/avatar';
-import ExtendedDetails from './ExtendedDetails';
+import ExtendedDetails from './extendedDetails';
 import Dialog from './dialog';
 //styled components
-import { UserDetails, BasicInfo, BasicInfoText, DetailBlock } from './styled/Containers';
+import { Container, BasicDetailsContainer, InfoBlock, ExtendedDetailsContainer } from './styled/Containers';
 import { Title, SubTitle } from './styled/Text';
 import { Primary as Button} from './styled/Button';
 
@@ -28,30 +29,36 @@ class ProfileHeader extends React.Component {
 
     render() {
         const {userDetails} = this.props;
-        const {dialogOpen }= this.state
+        const {dialogOpen}= this.state;
         return (
-            <UserDetails>
-                <BasicInfo>
+            <Container>
+                <BasicDetailsContainer>
                     <UserAvatar src={img}/>
-                    <DetailBlock>
-                        <BasicInfoText>
+                    <InfoBlock>
+                        <div>
                             <Title><span>{userDetails.name} | {userDetails.job}</span></Title>
                             <SubTitle><span> {userDetails.unit} | {userDetails.team} </span></SubTitle>
                             <SubTitle><span> {userDetails.jobDesc} </span></SubTitle>
-                        </BasicInfoText>
+                        </div>
                         <Button label="לפרופיל המלא" onClick={this.onDialogOpen}/>
-                    </DetailBlock>
-                </BasicInfo>
-                <ExtendedDetails userDetails={userDetails}/>
+                    </InfoBlock>
+                </BasicDetailsContainer>
+                <ExtendedDetailsContainer>
+                    <ExtendedDetails userDetails={userDetails}/>
+                </ExtendedDetailsContainer>
                 <Dialog 
                     userDetails={userDetails} 
                     open = {dialogOpen}
                     onClose = {this.onDialogClose}
                 />
-            </UserDetails>
+            </Container>
         );
     }
 }
+
+ProfileHeader.propTypes ={
+    userDetails: PropTypes.object.isRequired
+};
 
 
 export default ProfileHeader;

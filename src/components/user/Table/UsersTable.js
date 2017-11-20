@@ -66,4 +66,11 @@ const UsersTable = ({users, headerCols, dataFields, onSelect}) => {
   );
 };
 
-  export default UsersTable;
+UsersTable.propTypes = {
+  users: PropTypes.object.isRequired,
+  headerCols: PropTypes.array.isRequired,
+  dataFields: PropTypes.array.isRequired,
+  onSelect: PropTypes.func
+};
+
+export default UsersTable;

@@ -44,7 +44,7 @@ MyListItem.propTypes = {
     expandMoreIcon: PropTypes.node,
     leafIcon: PropTypes.node,
     hasChildren: PropTypes.bool
-}
+};
 MyListItem.muiName="ListItem";
 
 export default MyListItem;

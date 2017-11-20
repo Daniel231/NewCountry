@@ -1,17 +1,15 @@
 import Dialog from 'material-ui/Dialog';
 import styled from 'styled-components';
 import { ProfileAvatar } from '../../../styledComponents/avatar';
-import E from '../../ExtendedDetails';
+import E from '../../extendedDetails';
 
 
 
 const ProfileDialog = styled(Dialog).attrs({
     bodyStyle: {   
         backgroundColor: "rgb(228, 234, 234)", 
-        // backgroundColor: "rgb(228, 255, 234)", 
         paddingBottom: "0px", 
-        overflowX:"hidden",
-        // direction: 'rtl'
+        overflowX:"hidden"
     },
     titleStyle: {
         backgroundColor: "rgb(228, 234, 234)",
@@ -19,29 +17,31 @@ const ProfileDialog = styled(Dialog).attrs({
     },
     contentStyle: {
         display: 'flex',
-        width: '80%',
+        justifyContent: 'center',
+        // width: '80%',
         backgroundColor: "black",
         maxWidth: 'none',
         // direction: 'rtl'
+        borderRadius: '20px'
     },
     actionsContainerStyle:{
         backgroundColor: "rgb(33, 163, 151)", 
-        padding: "18px"
+        padding: "18px",
+        display: 'flex'
     },
     style: {
         // borderBottomLeftRadius: '20%',
         // borderBottomRightRadius: '20%',
         // borderTopLeftRadius: '20%',
         // borderTopRightRadius: '20%',
-        borderRadius: '20px'
+        borderRadius: "20px",
         
-        // width: '70%'
+        width: '90%'
         // direction: 'rtl'
     }
 })`
-& div {
-    borderRadius: 20px;
-    direction:rtl;
+& * {
+    direction:rtl;   
 }
 `;
 
@@ -56,11 +56,14 @@ export const Avatar = styled(ProfileAvatar).attrs({
 })``;
 
 export const ExtendedDetails = styled(E)`
-    width: 103%;
-    padding-top: 15px;
+    width: 108%;
+    padding-top: 10px;
     /* padding-right: 26.6%; */
     margin-right: -3%;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    background-color: #D1DDDD;
+
 `;
 
 
