@@ -4,6 +4,7 @@ import {GridContainer, GridRow, GridTile} from '../shared/grid'
 import {UsersGrid, ProfileHeader, UsersTable} from '../user';
 import SideMenu from '../group/treeList';
 
+import {connect} from 'react-redux';
 
 const Container = styled(GridContainer)`
     min-height: 100%;
@@ -18,22 +19,50 @@ const Tile = styled(GridTile)`
   max-height: 100vh;
 `;
 
-const MainView = () => {
+const InlineDiv = styled.div`
+  display: inline-block;
+  vertical-align: top;
+  width: ${props => props.width ? props.width : ''}
+`;
+
+const ScreenDiv = styled.div`
+  height: calc(100vh - 64px);
+`;
+
+const MainView = ({user}) => {
     return (
-        <Container>
-            <GridRow>
-                <GridTile basis={'100%'}><ProfileHeader userDetails={userDetails}/></GridTile>
-            </GridRow>
-            <ScreenRow>
-                <GridTile basis={'16%'}><SideMenu data={groups}/></GridTile>
-                <Tile basis={'80%'}><UsersGrid users={tableData.users} onAvatarClick={(u)=>{console.log(u)}}/></Tile>
-                {/* <Tile basis={'84%'}><UsersTable {...tableData}/></Tile> */}
-            </ScreenRow>
-        </Container>
+      <ScreenDiv>
+        <div>
+          <ProfileHeader userDetails={userDetails}/>
+        </div>
+      
+        <InlineDiv width="16%"><SideMenu data={groups}/></InlineDiv>
+        <InlineDiv width="80%"><UsersGrid users={tableData.users} onAvatarClick={(u)=>{console.log(u)}}/></InlineDiv>
+        
+      </ScreenDiv>
+      
+        // <Container>
+        //     <GridRow>
+        //         {/* <GridTile basis={'100%'}><ProfileHeader userDetails={userDetails}/></GridTile> */}
+        //         <div style={{width:'100px'}}>{user.name}</div>
+        //     </GridRow>
+        //     <ScreenRow>
+        //         <GridTile basis={'16%'}><SideMenu data={groups}/></GridTile>
+        //         <Tile basis={'80%'}><UsersGrid users={tableData.users} onAvatarClick={(u)=>{console.log(u)}}/></Tile>
+        //         {/* <Tile basis={'84%'}><UsersTable {...tableData}/></Tile> */}
+        //     </ScreenRow>
+        // </Container>
     );
 }
 
-export default MainView;
+function mapStateToProps(state) {
+  return {
+    user: state
+  };
+}
+
+
+export default connect(mapStateToProps)(MainView);
 
 
 let userDetails = {
