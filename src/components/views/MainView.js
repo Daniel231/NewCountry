@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import {GridContainer, GridRow, GridTile} from '../shared/grid'
-import {UsersGrid, ProfileHeader, UsersTable} from '../user';
+import {GridContainer, GridRow, GridTile} from '../shared/grid';
+import {UsersGrid, Profile, ProfileHeader, UsersTable} from '../user';
 import SideMenu from '../group/treeList';
+import TreeList from '../group/treeList/treeList.container';
 
 import {connect} from 'react-redux';
 
@@ -33,10 +34,10 @@ const MainView = ({user}) => {
     return (
       <ScreenDiv>
         <div>
-          <ProfileHeader userDetails={userDetails}/>
+          <Profile/>
         </div>
       
-        <InlineDiv width="16%"><SideMenu data={groups}/></InlineDiv>
+        <InlineDiv width="16%"><TreeList/></InlineDiv>
         <InlineDiv width="80%"><UsersGrid users={tableData.users} onAvatarClick={(u)=>{console.log(u)}}/></InlineDiv>
         
       </ScreenDiv>
@@ -149,7 +150,7 @@ let groups = [
         }
       ]
     }
-  ];
+];
   
   let tableData = {
     users: [
@@ -166,4 +167,4 @@ let groups = [
     headerCols: ["שם", "תפקיד"],
     dataFields: ["name", "role"]
   
-  }
+  };

@@ -1,4 +1,7 @@
 import { combineReducers } from 'redux';
+import groups from './components/group/group.reducer';
+import selectedGroup from './components/group/selected_group.reducer';
+import user from './components/user/Profile/profile.reducer';
 
 
 function dummyReducer(state=[], action) {
@@ -6,6 +9,8 @@ function dummyReducer(state=[], action) {
 }
 
 export default combineReducers({
-    user: dummyReducer
-})
+    groups,
+    selectedGroup,
+    user
+});
 
