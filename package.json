@@ -29,6 +29,7 @@
     "react-tap-event-plugin": "^2.0.1",
     "react-treeview-mui": "^0.1.2",
     "redux": "^3.5.2",
+    "redux-saga": "^0.16.0",
     "redux-thunk": "2.0.1",
     "shortid": "^2.2.8",
     "styled-components": "^2.2.3",

@@ -1,39 +1,28 @@
-import { FETCH_USER } from '../user.actions';
+import { FETCH_USER_SUCCESS } from '../user.actions';
 
 export default function(state = user, action) {
-    // switch(action.type) {
-    //     case FETCH_USER:
-    //         return action.payload;
-    //     default:
-    //         return state;
-    // }
-    return state;
+    switch(action.type) {
+         case FETCH_USER_SUCCESS:
+             return action.user;
+         default:
+             return state;
+    }
 }
 
 let user = {
-    fullJobDesc: "לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיא" +
-     "- פוסיליס קוויס, אקווזמן קוואזי במר מודוף." +
-     "אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בל" +
-     "- וענוף לורם איפסום דולור סיט אמט," +
-     "קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח." +
-     "עמחליף נולום ארווס סאפיאן - פוסיליס קוויס," +
-     "אקווזמן קולהע צופעט למרקוח איבן איף," +
-     "ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק." +
-     "תצטנפל בלינדו למרקל אס לכימפו, דול," +
-     "צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש." +
-     "קוויז דומור ליאמום בלינך רוגצה. לפמעט",
-    name: "דניאל עזרא",
-    job: "עוקץ",
-    unit: "כלשהי",
-    team: "עיצוב",
-    jobDesc: "אזרח חופשי ומאושר",
+    fullJobDesc: 'dfgdfg',
+    name: "h",
+    job: "j",
+    unit: "h",
+    team: "h",
+    jobDesc: "א",
     id: 6861599,
     passport: 6861599,
-    rank: "אזרח!!",
-    clasification: "מסווג",
-    phone: "051111",
-    mobile: "052222",
-    mail: "gamba@gamba.com",
-    address: "באר שבע",
-    groups: ["הפרלמנט", "פאור ריינג'רס"]
+    rank: "h!!",
+    clasification: "h",
+    phone: "h",
+    mobile: "h",
+    mail: "h@gamba.com",
+    address: "h",
+    groups: ["yy", "jhhkhjk"]
 };

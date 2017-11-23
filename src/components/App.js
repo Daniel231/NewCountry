@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Header from './common/AppBar';
-import Style from "../styles/App.css";
+import Style from '../styles/App.css';
 
 import MainView from './views/MainView';
 
@@ -11,7 +11,7 @@ injectTapEventPlugin();
 
 //configure the theme to work with RTL
 const uiTheme = getMuiTheme({
-  isRtl: true,
+  isRtl: true
 });
 
 class App extends React.Component {
