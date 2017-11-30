@@ -1,8 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { render } from 'react-dom';
+// import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'mobx-react';
+import { UsersStore } from './stores/usersStore';
+// import createSagaMiddleware from 'redux-saga';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import App from './components/App';
+import './styles/App.css';
+// import rootReducer from './rootReducer';
+// import { getUser } from './components/user/user.saga';
+
+// const sagaMiddleware = createSagaMiddleware();
+
+// const store = createStore(
+//   rootReducer,
+//   applyMiddleware(sagaMiddleware)
+// );
+
+// sagaMiddleware.run(getUser);
+
+const store = new UsersStore();
+
+render(
+  <Provider rootStore={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

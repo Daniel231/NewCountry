@@ -1,0 +1,10 @@
+html,body {
+  margin: 0;
+	height: 100%;
+	font-family: sans-serif;
+	overflow: auto;
+}
+#root {
+  direction: rtl;
+  min-height: '100vh';
+}
