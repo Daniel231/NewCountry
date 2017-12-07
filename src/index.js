@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 // import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'mobx-react';
-import { UsersStore } from './stores/usersStore';
+import * as stores from './stores';
+
 // import createSagaMiddleware from 'redux-saga';
 
 import App from './components/App';
@@ -19,10 +20,9 @@ import './styles/App.css';
 
 // sagaMiddleware.run(getUser);
 
-const store = new UsersStore();
 
 render(
-  <Provider rootStore={store}>
+  <Provider {...stores}>
     <App />
   </Provider>,
   document.getElementById('root')

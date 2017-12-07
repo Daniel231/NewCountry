@@ -36,4 +36,6 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps)(MainView);
+export default MainView
+
+// export default connect(mapStateToProps)(MainView);

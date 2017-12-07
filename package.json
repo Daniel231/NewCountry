@@ -96,7 +96,6 @@
   },
   "babel": {
     "plugins": [
-      "transform-decorators-legacy"
     ],
     "presets": [
       "airbnb",

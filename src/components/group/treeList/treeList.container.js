@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { observer, inject } from 'mobx-react';
 import List from './';
-import {selectGroup} from '../group.actions';
 
 class TreeListContainer extends Component {
     constructor(props) {
@@ -16,23 +14,13 @@ class TreeListContainer extends Component {
     }
 
     render() {
-        const { groups } = this.props;
+        // const { groups } = this.props.groupStore.groupTree;
         return (
-            <List data={groups} onChange={this.onItemSelected} valueField="id"/>
+            <List data={this.props.groupStore.groupTree} valueField="id"/>
         );
     }
 }
 
+export default observer(['groupStore'], TreeListContainer);
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({selectGroup}, dispatch);
-}
-
-
-function mapStateToProps(state) {
-    return {
-        groups: state.groups
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TreeListContainer);
+// export default connect(mapStateToProps, mapDispatchToProps)(TreeListContainer);

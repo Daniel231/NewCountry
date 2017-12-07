@@ -9,7 +9,8 @@ const ProfileDialog = styled(Dialog).attrs({
     bodyStyle: {   
         backgroundColor: "rgb(228, 234, 234)", 
         paddingBottom: "0px", 
-        overflowX:"hidden"
+        overflowX:"hidden",
+        
     },
     titleStyle: {
         backgroundColor: "rgb(228, 234, 234)",
@@ -18,27 +19,18 @@ const ProfileDialog = styled(Dialog).attrs({
     contentStyle: {
         display: 'flex',
         justifyContent: 'center',
-        // width: '80%',
         backgroundColor: "black",
-        maxWidth: 'none',
-        // direction: 'rtl'
-        borderRadius: '20px'
+        maxWidth: 'none', 
+        borderRadius: '20px',
+        width: 'fit-content',
+        maxWidth: '70%'
+        
     },
     actionsContainerStyle:{
         backgroundColor: "rgb(33, 163, 151)", 
         padding: "18px",
         display: 'flex'
     },
-    style: {
-        // borderBottomLeftRadius: '20%',
-        // borderBottomRightRadius: '20%',
-        // borderTopLeftRadius: '20%',
-        // borderTopRightRadius: '20%',
-        borderRadius: "20px",
-        
-        width: '90%'
-        // direction: 'rtl'
-    }
 })`
 & * {
     direction:rtl;   

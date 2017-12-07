@@ -1,39 +1,31 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
-import { observer } from 'mobx-react';
-import { getMyUser } from '../user.actions';
+import { observer, inject } from 'mobx-react';
 import ProfileComponent from './ProfileHeader';
 
-@observer
 class ProfileContainer extends Component {
     constructor(props) {
         super(props);
     }
 
     componentWillMount() {
-        this.props.getMyUser();
+        // this.props.getMyUser();
     }
     
     render() {
         // const { user } = this.props.store.myUser;
+        if(!this.props.userStore.myUser) {
+            return (
+                <div>LOADING ....</div>
+            )
+        }
         return (
-            <ProfileComponent userDetails={this.props.store.myUser} />
+            <ProfileComponent userDetails={this.props.userStore.myUser} />
         );
     }
 }
 
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({getMyUser}, dispatch);
-}
+export default observer(['userStore'], ProfileContainer);
 
-function mapStateToProps(state) {
-    return {
-        user: state.user
-    };
-}
-
-export default ProfileContainer;
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
