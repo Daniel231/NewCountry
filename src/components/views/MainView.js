@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
 import { UsersGrid, Profile } from '../user';
 import TreeList from '../group/treeList/treeList.container';
 import { tableData } from './mock';
@@ -23,19 +22,11 @@ const MainView = () => (
     </div>
 
     <InlineDiv width="16%"> <TreeList /> </InlineDiv>
-    <InlineDiv width="80%"><UsersGrid users={tableData.users} onAvatarClick={(u) => console.log(u)} /></InlineDiv>
+    <InlineDiv width="80%"><UsersGrid onAvatarClick={(u) => console.log(u)} /></InlineDiv>
 
   </ScreenDiv>
 );
 
-
-function mapStateToProps(state) {
-  return {
-    user: state
-  };
-}
-
-
-export default MainView
+export default MainView;
 
 // export default connect(mapStateToProps)(MainView);

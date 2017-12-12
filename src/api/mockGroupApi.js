@@ -1,87 +1,26 @@
 import delay from './delay';
-
-
-const groups = [
-    {
-      title: "אלעד",
-      id:1,
-      children: [
-        {
-          id:1.1,
-          title: "הבוס"
-        },
-        {
-          id:1.2,
-          title: "העייף",
-          children: [
-            { id:1.21, title: "מאוד" }
-          ]
-        }
-      ]
-    },
-    {
-      id:2,
-      title: "יונתן",
-      children: [
-        {
-          id:2.1,title: "האפורי"
-        }
-      ]
-    },
-    {
-      id:3,
-      title: "יונתן",
-      children: [
-        {
-          id:3.1,title: "האפורי"
-        }
-      ]
-    },
-    {
-      id:4,
-      title: "יונתן",
-      children: [
-        {
-          id:4.1, title: "האפורי"
-        }
-      ]
-    },
-    {
-      id:5,
-      title: "יונתן",
-      children: [
-        {
-          id:5.1,title: "האפורי"
-        }
-      ]
-    },
-    {
-      id: 6, title: "יונתן",
-      children: [
-        {
-          id:6.1,title: "האפורי"
-        }
-      ]
-    },
-    {
-      id:7, title: "מישקה",
-      children: [
-        {
-          id:7.1,title: "מרלין"
-        }
-      ]
-    }
-];
+import { groups, tableData } from './mock';
 
 
 class GroupApi {
-    static getAllGroups() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(Object.assign([], groups));
-            }, 5000);
-        });
-    }
+  static getAllGroups() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(Object.assign([], groups));
+      }, 5000);
+    });
+  }
+  static getGroupMembers(groupId) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if(groupId == 1) {
+          resolve(Object.assign([], tableData.users.slice(0, 2)));
+        } else {
+          resolve(Object.assign([], tableData.users.slice(2)));
+        }
+      }, delay);
+    });
+  }
 }
 
 export default GroupApi;

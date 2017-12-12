@@ -5,27 +5,30 @@ import { observer, inject } from 'mobx-react';
 import ProfileComponent from './ProfileHeader';
 
 class ProfileContainer extends Component {
-    constructor(props) {
-        super(props);
-    }
+  // constructor(props) {
+  //   super(props);
+  // }
 
-    componentWillMount() {
-        // this.props.getMyUser();
+  componentWillMount() {
+    // this.props.getMyUser();
+  }
+
+  render() {
+    // const { user } = this.props.store.myUser;
+    if(!this.props.userStore.myUser) {
+      return (
+        <div>LOADING ....</div>
+      );
     }
-    
-    render() {
-        // const { user } = this.props.store.myUser;
-        if(!this.props.userStore.myUser) {
-            return (
-                <div>LOADING ....</div>
-            )
-        }
-        return (
-            <ProfileComponent userDetails={this.props.userStore.myUser} />
-        );
-    }
+    return (
+      <ProfileComponent userDetails={this.props.userStore.myUser} />
+    );
+  }
 }
 
-
-export default observer(['userStore'], ProfileContainer);
+export default inject(
+  root => ({
+    userStore: root.store.userStore,
+  })
+)(observer(ProfileContainer));
 

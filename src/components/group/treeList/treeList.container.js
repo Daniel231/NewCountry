@@ -3,24 +3,35 @@ import { observer, inject } from 'mobx-react';
 import List from './';
 
 class TreeListContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.onItemSelected = this.onItemSelected.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.onItemSelected = this.onItemSelected.bind(this);
+  }
 
-    onItemSelected(event, index){
-        const {groups} = this.props;
-        this.props.selectGroup(index);
-    }
+  onItemSelected(event, index) {
+    this.props.selectedStore.selectGroup(index);
+  }
 
-    render() {
-        // const { groups } = this.props.groupStore.groupTree;
-        return (
-            <List data={this.props.groupStore.groupTree} valueField="id"/>
-        );
+  render() {
+    if(this.props.groupStore.loading) {
+      return (
+        <div>Loading...</div>
+      );
     }
+    return (
+      <List data={this.props.groupStore.groupTree} valueField="id" 
+        defaultSelected={this.props.selectedStore.selectedGroup.id}
+        onChange={this.onItemSelected}
+      />
+    );
+  }
 }
 
-export default observer(['groupStore'], TreeListContainer);
+export default inject(
+  root => ({
+    groupStore: root.store.groupStore,
+    selectedStore: root.store.selectedGroupStore,
+  })
+)(observer(TreeListContainer));
 
 // export default connect(mapStateToProps, mapDispatchToProps)(TreeListContainer);

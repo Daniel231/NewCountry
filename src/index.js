@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 // import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'mobx-react';
-import * as stores from './stores';
+// import * as stores from './stores';
+import RootStore from './stores/rootStore';
 
 // import createSagaMiddleware from 'redux-saga';
 
@@ -22,7 +23,7 @@ import './styles/App.css';
 
 
 render(
-  <Provider {...stores}>
+  <Provider store={new RootStore()}>
     <App />
   </Provider>,
   document.getElementById('root')

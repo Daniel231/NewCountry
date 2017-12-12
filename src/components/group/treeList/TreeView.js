@@ -44,8 +44,8 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
 }
 
 
-const TreeView = ({data, textField, childrenField, valueField, onChange}) => {
-  const defVal = data[0] && valueField && data[0][valueField] ? data[0][valueField] : 1;
+const TreeView = ({data, defaultSelected, textField, childrenField, valueField, onChange}) => {
+  const defVal = defaultSelected;
   return (
     // <div style={Styles.container}>
       <SelectableList style={Styles.container} onChange={onChange} defaultValue={defVal} 
@@ -64,6 +64,7 @@ TreeView.defaultProps = {
 
 TreeView.propTypes = {
   data: PropTypes.array.isRequired,
+  defaultSelected: PropTypes.string.isRequired,
   textField: PropTypes.string.isRequired,
   childrenField: PropTypes.string.isRequired,
   valueField: PropTypes.string,
