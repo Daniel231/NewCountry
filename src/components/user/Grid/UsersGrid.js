@@ -33,6 +33,6 @@ UsersGridView.propTypes = {
 export default inject(
   root => ({
     users: root.store
-      .selectedGroupStore.selectedGroup.members,
+      .selectedGroupStore.filteredMembers,
   })
 )(observer(UsersGridView));

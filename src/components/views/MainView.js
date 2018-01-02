@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { UsersGrid, Profile } from '../user';
+import { UsersGrid, Profile, SearchBar } from '../user';
 import TreeList from '../group/treeList/treeList.container';
 import { tableData } from './mock';
 
@@ -22,7 +22,10 @@ const MainView = () => (
     </div>
 
     <InlineDiv width="16%"> <TreeList /> </InlineDiv>
-    <InlineDiv width="80%"><UsersGrid onAvatarClick={(u) => console.log(u)} /></InlineDiv>
+    <InlineDiv width="80%">
+      <SearchBar />
+      <UsersGrid onAvatarClick={(u) => console.log(u)} />
+    </InlineDiv>
 
   </ScreenDiv>
 );

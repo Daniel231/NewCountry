@@ -9,7 +9,7 @@ class TreeListContainer extends Component {
   }
 
   onItemSelected(event, index) {
-    this.props.selectedStore.selectGroup(index);
+    this.props.groupStore.selectGroup(index);
   }
 
   render() {
@@ -20,7 +20,7 @@ class TreeListContainer extends Component {
     }
     return (
       <List data={this.props.groupStore.groupTree} valueField="id" 
-        defaultSelected={this.props.selectedStore.selectedGroup.id}
+        defaultSelected={this.props.selectedStore.id}
         onChange={this.onItemSelected}
       />
     );
