@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { UsersGrid, Profile, SearchBar } from '../user';
 import TreeList from '../group/treeList/treeList.container';
 import { tableData } from './mock';
+import Divider from 'material-ui/Divider';
 
 
 const InlineDiv = styled.div`
@@ -24,6 +25,7 @@ const MainView = () => (
     <InlineDiv width="16%"> <TreeList /> </InlineDiv>
     <InlineDiv width="80%">
       <SearchBar />
+      <Divider />
       <UsersGrid onAvatarClick={(u) => console.log(u)} />
     </InlineDiv>
 
