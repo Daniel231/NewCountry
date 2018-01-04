@@ -39,28 +39,29 @@ class SearchBar extends React.Component {
         <Container
           style = {{marginTop: '10px', marginRight: '10px', justifyContent: "space-between"}} >
           <div style = {{display: 'flex'}}>
-            <GroupIcon style = {{margin: '2px'}} />
+            <GroupIcon style = {{width: '30', height: '30',}} />
             <GroupName> {this.props.selectedGroup.name}</GroupName>
             <span style={{paddingTop: '6px'}}>(0)</span>
           </div>
-          <div style = {{display: 'flex'}}>
+          <div style = {{display: 'flex', flexGrow: 1, justifyContent: 'center'}}>
             <FilterInput
               type="text"
               placeholder="חפש שם"
               value={this.state.filterText}
-              style = {{marginRight: '10px', height: '25px'}}
+              style = {{marginRight: '10px', height: '25px', width: '82%', minWidth: '200px'}}
               onChange={this.onInputChange}
             />
             <SearchIcon
-              style = {{marginLeft: '-30px', padding: '2px'}}
+              style = {{marginLeft: '-30px', padding: '2px',}}
             />
           </div>
-          <div style = {{display: 'flex'}} >
-            <span style={{marginTop: '4px'}} >מיין לפי:</span>
+          <div style = {{display: 'flex', flexGrow: '1', justifyContent: 'center'}} >
+            <span style={{marginTop: '4px', marginLeft: '3px'}} >מיין לפי:</span>
             <SelectField
               style = {{marginTop: '-10px'}}
               value={this.state.value}
               onChange={this.handleOrderByChange}
+              style={{width: 150, marginTop: '-10px'}}     
             >
               <MenuItem orderBy={1} primaryText="עובדים" />
               <MenuItem orderBy={2} primaryText="תפקידים" />

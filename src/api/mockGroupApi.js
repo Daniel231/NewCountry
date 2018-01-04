@@ -7,7 +7,7 @@ class GroupApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(Object.assign([], groups));
-      }, 5000);
+      }, 50);
     });
   }
   static getGroupMembers(groupId) {
