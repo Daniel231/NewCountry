@@ -22,29 +22,28 @@ class MainView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewType: TABLE
-    }
+      viewType: TABLE,
+    };
     this.changeViewType = this.changeViewType.bind(this);
-  };
-
-  changeViewType (viewType) {
-    return () => this.setState({viewType})  
   }
 
-  render() { 
-    const childToRender = this.state.viewType == TABLE ? <UsersTable headerCols = {tableData.headerCols} dataFields={tableData.dataFields} users={tableData.users} /> : <UsersGrid/>
+  changeViewType (viewType) {
+    return () => this.setState({ viewType, });
+  }
+
+  render() {
+    const childToRender = this.state.viewType === TABLE ? <UsersTable headerCols={tableData.headerCols} dataFields={tableData.dataFields} users={tableData.users} /> : <UsersGrid />;
     return (
       <ScreenDiv>
         <div>
           <Profile />
         </div>
 
-        <InlineDiv width="16%"> <TreeList /> </InlineDiv>
-        <InlineDiv width="80%">
-          <SearchBar onChangeViewType = {this.changeViewType} />
+        <InlineDiv width="15%"> <TreeList /> </InlineDiv>
+        <InlineDiv style={{ width: '80%', marginRight: '2%', height: 'calc(100% - 195px)', }} >
+          <SearchBar onChangeViewType={this.changeViewType} />
           <Divider />
           {childToRender}
-          {/* <UsersGrid onAvatarClick={(u) => console.log(u)} /> */}
         </InlineDiv>
 
       </ScreenDiv>
