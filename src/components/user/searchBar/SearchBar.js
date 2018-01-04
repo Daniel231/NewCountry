@@ -12,6 +12,8 @@ import IconButton from 'material-ui/IconButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+const TABLE = 1
+const GRID = 2
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -31,6 +33,7 @@ class SearchBar extends React.Component {
     });
   }
   render() {
+    const {onChangeViewType} = this.props;
     return (
       <div>
         <Container
@@ -64,10 +67,10 @@ class SearchBar extends React.Component {
             </SelectField>
           </div>
           <div style={{ float: 'left', marginTop: '-10px', display: 'flex'}}>
-            <IconButton tooltip="הצג בטבלה">
+            <IconButton onClick={onChangeViewType(TABLE)} tooltip="הצג רשימה">
               <ViewListIcon />
             </IconButton>
-            <IconButton tooltip="הצג פריטים">
+            <IconButton onClick={onChangeViewType(GRID)} tooltip="הצג גריד">
               <ViewModuleIcon />
             </IconButton>
           </div>
