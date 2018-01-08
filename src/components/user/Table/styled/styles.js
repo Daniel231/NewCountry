@@ -8,11 +8,10 @@ const Styles = {
     height: 'calc(100% - 70px)',
   },
   avatarColumn: {
-    width: '6%',
-    minWidth: '50px',
+    width: '35px',
   },
   iconColumn: {
-    width: '3%',
+    width: '30px',
     // backgroundColor:'#90B7B6',
     padding: 0,
     minWidth: '0',
