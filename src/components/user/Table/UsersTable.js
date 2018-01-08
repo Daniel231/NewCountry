@@ -42,7 +42,7 @@ const UsersTable = ({users, headerCols, dataFields, onSelect}) => {
           </TableHeaderColumn>)}
         </TableRow>
       </TableHeader>
-      <TableBody displayRowCheckbox={false}>
+      <TableBody displayRowCheckbox={false} >
         {users.map((user, index) => {
           const Badge = getUserBadgeIcon(user);
           const Icon = Badge ? <IconContainer><Badge/></IconContainer> : null;

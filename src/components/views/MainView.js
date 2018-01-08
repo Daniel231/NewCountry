@@ -11,12 +11,28 @@ const GRID = 2;
 const InlineDiv = styled.div`
   display: inline-block;
   vertical-align: top;
-  width: ${props => (props.width ? props.width : '')}
+  width: 15%;
+  position: absolute;
+  width: ${props => (props.width ? props.width : '')};
+`;
+
+const OtherDiv = styled.div`
+  width: 80%;
+  float: right;
+  height: calc(100vh - 260px);
+  margin-left: 3%;
+  margin-right: calc(15%);
+  padding-right: 33px;
+  min-width: 666px;
 `;
 
 const ScreenDiv = styled.div`
   height: calc(100vh - 64px);
   background-color: #e3eae9;
+`;
+
+const ToName = styled.div`
+  height: calc(100vh - 255px);
 `;
 
 class MainView extends React.Component {
@@ -40,12 +56,14 @@ class MainView extends React.Component {
           <Profile />
         </div>
 
-        <InlineDiv width="15%"> <TreeList /> </InlineDiv>
-        <InlineDiv style={{ width: '80%', marginRight: '2%', height: 'calc(100% - 195px)', }} >
-          <SearchBar onChangeViewType={this.changeViewType} />
-          <Divider />
-          {childToRender}
-        </InlineDiv>
+        <ToName>
+          <InlineDiv width="15%"> <TreeList /> </InlineDiv>
+          <OtherDiv >
+            <SearchBar onChangeViewType={this.changeViewType} />
+            <Divider />
+            {childToRender}
+          </OtherDiv>
+        </ToName>
 
       </ScreenDiv>
     );

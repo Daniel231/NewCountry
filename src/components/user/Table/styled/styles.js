@@ -3,9 +3,9 @@ const Styles = {
     // width: '80%',
     // maxHeight:'440px',
     marginLeft: '2%',
-    marginTop: '2%',
+    marginTop: '20px',
     overflow: 'auto',
-    height: 'calc(100% - 70px)',
+    height: 'calc(100% - 63px)',
   },
   avatarColumn: {
     width: '35px',
