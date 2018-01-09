@@ -1,34 +1,74 @@
 import React from 'react';
 import styled from 'styled-components';
-import { UsersGrid, Profile, SearchBar } from '../user';
+import { UsersGrid, UsersTable, Profile, SearchBar } from '../user';
 import TreeList from '../group/treeList/treeList.container';
 import { tableData } from './mock';
+import Divider from 'material-ui/Divider';
 
+const TABLE = 1;
+const GRID = 2;
 
 const InlineDiv = styled.div`
   display: inline-block;
   vertical-align: top;
-  width: ${props => (props.width ? props.width : '')}
+  width: 15%;
+  position: absolute;
+  width: ${props => (props.width ? props.width : '')};
+`;
+
+const OtherDiv = styled.div`
+  width: 80%;
+  float: right;
+  height: calc(100vh - 260px);
+  margin-left: 3%;
+  margin-right: calc(15%);
+  padding-right: 33px;
+  min-width: 666px;
 `;
 
 const ScreenDiv = styled.div`
   height: calc(100vh - 64px);
+  background-color: #e3eae9;
 `;
 
-const MainView = () => (
-  <ScreenDiv>
-    <div>
-      <Profile />
-    </div>
+const ToName = styled.div`
+  height: calc(100vh - 255px);
+`;
 
-    <InlineDiv width="16%"> <TreeList /> </InlineDiv>
-    <InlineDiv width="80%">
-      <SearchBar />
-      <UsersGrid onAvatarClick={(u) => console.log(u)} />
-    </InlineDiv>
+class MainView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewType: TABLE,
+    };
+    this.changeViewType = this.changeViewType.bind(this);
+  }
 
-  </ScreenDiv>
-);
+  changeViewType (viewType) {
+    return () => this.setState({ viewType, });
+  }
+
+  render() {
+    const childToRender = this.state.viewType === TABLE ? <UsersTable headerCols={tableData.headerCols} dataFields={tableData.dataFields} users={tableData.users} /> : <UsersGrid />;
+    return (
+      <ScreenDiv>
+        <div>
+          <Profile />
+        </div>
+
+        <ToName>
+          <InlineDiv width="15%"> <TreeList /> </InlineDiv>
+          <OtherDiv >
+            <SearchBar onChangeViewType={this.changeViewType} />
+            <Divider />
+            {childToRender}
+          </OtherDiv>
+        </ToName>
+
+      </ScreenDiv>
+    );
+  }
+}
 
 export default MainView;
 
