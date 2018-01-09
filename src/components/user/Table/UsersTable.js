@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { observer, inject } from 'mobx-react';
 import shortid from 'shortid';
 import {
   Table,
@@ -75,4 +76,10 @@ UsersTable.propTypes = {
   onSelect: PropTypes.func
 };
 
-export default UsersTable;
+
+export default inject(
+  root => ({
+    users: root.store
+      .selectedGroupStore.filteredMembers,
+  })
+)(observer(UsersTable));
