@@ -9,7 +9,7 @@ const Container = styled(GridContainer)`
     width: 100%;
 `;
 const Tile = styled(GridTile)`
-    margin: 20px;
+    margin: 30px;
 `;
 
 const UsersGridView = ({users, onAvatarClick}) => {

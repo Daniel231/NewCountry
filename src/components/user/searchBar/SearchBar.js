@@ -11,9 +11,11 @@ import SearchIcon from 'material-ui/svg-icons/action/search';
 import IconButton from 'material-ui/IconButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import iconButtonStyles from '../../shared/styles/iconButton.styles';
 
-const TABLE = 1
-const GRID = 2
+const TABLE = 1;
+const GRID = 2;
+
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -33,45 +35,45 @@ class SearchBar extends React.Component {
     });
   }
   render() {
-    const {onChangeViewType} = this.props;
+    const { onChangeViewType, } = this.props;
     return (
       <div>
         <Container
-          style = {{marginTop: '10px', marginRight: '10px', justifyContent: "space-between"}} >
-          <div style = {{display: 'flex'}}>
-            <GroupIcon style = {{width: '30', height: '30',}} />
+          style={{ marginTop: '10px', marginRight: '10px', justifyContent: 'space-between', }}
+        >
+          <div style={{ display: 'flex', }}>
+            <GroupIcon style={iconButtonStyles.mediumIcon} />
             <GroupName> {this.props.selectedGroup.name}</GroupName>
-            <span style={{paddingTop: '6px'}}>(0)</span>
+            <span style={{ margin: 'auto', }}>(0)</span>
           </div>
-          <div style = {{display: 'flex', flexGrow: 1, justifyContent: 'center'}}>
+          <div style={{ display: 'flex', flexGrow: 1, justifyContent: 'center', alignItems: 'center', }}>
             <FilterInput
               type="text"
               placeholder="חפש שם"
               value={this.state.filterText}
-              style = {{marginRight: '10px', height: '25px', width: '82%', minWidth: '200px'}}
               onChange={this.onInputChange}
+              style={{ marginRight: '10px', height: '25px', width: '82%', minWidth: '200px', }}
             />
             <SearchIcon
-              style = {{marginLeft: '-30px', padding: '2px',}}
+              style={{ marginLeft: '-30px', padding: '2px', }}
             />
           </div>
-          <div style = {{display: 'flex', flexGrow: '1', justifyContent: 'center'}} >
-            <span style={{marginTop: '4px', marginLeft: '3px'}} >מיין לפי:</span>
+          <div style={{ display: 'flex', flexGrow: '1', justifyContent: 'center', alignItems: 'center', }} >
+            <span style={{ marginTop: '4px', marginLeft: '3px', }} >מיין לפי:</span>
             <SelectField
-              style = {{marginTop: '-10px'}}
               value={this.state.value}
               onChange={this.handleOrderByChange}
-              style={{width: 150, marginTop: '-10px'}}     
+              style={{ width: 150, marginLeft: '5px', marginTop: '2px', }}
             >
               <MenuItem orderBy={1} primaryText="עובדים" />
               <MenuItem orderBy={2} primaryText="תפקידים" />
             </SelectField>
           </div>
-          <div style={{ float: 'left', marginTop: '-10px', display: 'flex'}}>
-            <IconButton onClick={onChangeViewType(TABLE)} tooltip="הצג רשימה">
+          <div style={{ float: 'left', display: 'flex', alignItems: 'center', }}>
+            <IconButton style={iconButtonStyles.tiny} iconStyle={iconButtonStyles.tinyIcon} onClick={onChangeViewType(TABLE)} tooltip="הצג רשימה">
               <ViewListIcon />
             </IconButton>
-            <IconButton onClick={onChangeViewType(GRID)} tooltip="הצג גריד">
+            <IconButton style={iconButtonStyles.tiny} iconStyle={iconButtonStyles.tinyIcon} onClick={onChangeViewType(GRID)} tooltip="הצג גריד">
               <ViewModuleIcon />
             </IconButton>
           </div>

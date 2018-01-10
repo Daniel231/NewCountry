@@ -5,6 +5,7 @@ export const Container = styled.div`
     display: flex;
     width: 100%;
     box-shadow: 1px 2px 5px #888888;
+
 `;
 export const BasicDetailsContainer = styled.div`
     /* direction: rtl; */

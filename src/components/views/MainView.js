@@ -32,14 +32,14 @@ const ScreenDiv = styled.div`
 `;
 
 const ToName = styled.div`
-  height: calc(100vh - 255px);
+  height: calc(100vh - 256px);
 `;
 
 class MainView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewType: TABLE,
+      viewType: GRID,
     };
     this.changeViewType = this.changeViewType.bind(this);
   }
@@ -52,15 +52,13 @@ class MainView extends React.Component {
     const childToRender = this.state.viewType === TABLE ? <UsersTable headerCols={tableData.headerCols} dataFields={tableData.dataFields} users={tableData.users} /> : <UsersGrid />;
     return (
       <ScreenDiv>
-        <div>
-          <Profile />
-        </div>
+        <Profile />
 
         <ToName>
           <InlineDiv width="15%"> <TreeList /> </InlineDiv>
           <OtherDiv >
             <SearchBar onChangeViewType={this.changeViewType} />
-            <Divider />
+            <Divider style={{ height: '2px', backgroundColor: 'rgb(198, 207, 208)', }} />
             {childToRender}
           </OtherDiv>
         </ToName>
