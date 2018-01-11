@@ -3,6 +3,7 @@ import {GridContainer, GridRow, GridTile} from '../../../shared/grid';
 
 export const Container = styled.div`
     display: flex;
+    flex-shrink: 0;
     width: 100%;
     box-shadow: 1px 2px 5px #888888;
 

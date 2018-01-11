@@ -17,7 +17,7 @@ const App = () => (
   <MuiThemeProvider muiTheme={uiTheme}>
     <div>
       <Header title="לנה" />
-      <MainView />
+      <MainView style={{ display: 'flex', }} />
     </div>
   </MuiThemeProvider>
 );

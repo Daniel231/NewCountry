@@ -5,7 +5,7 @@ const Styles = {
     marginLeft: '2%',
     marginTop: '20px',
     overflow: 'auto',
-    height: 'calc(100% - 63px)',
+    // height: 'calc(100% - 63px)',
   },
   avatarColumn: {
     width: '35px',

@@ -11,28 +11,37 @@ const GRID = 2;
 const InlineDiv = styled.div`
   display: inline-block;
   vertical-align: top;
-  width: 15%;
-  position: absolute;
+  width: 250px;
   width: ${props => (props.width ? props.width : '')};
+  display: flex;
+  flex-shrink: 0;
 `;
+
+// height: calc(100vh - 260px);
 
 const OtherDiv = styled.div`
   width: 80%;
-  float: right;
-  height: calc(100vh - 260px);
   margin-left: 3%;
-  margin-right: calc(15%);
   padding-right: 33px;
   min-width: 666px;
+  display: flex;
+  flex-direction: column;
 `;
 
+// height: calc(100vh - 64px);
+
 const ScreenDiv = styled.div`
+  display: flex;
   height: calc(100vh - 64px);
+  flex-direction: column;
   background-color: #e3eae9;
 `;
 
+// height: calc(100vh - 256px);
+
 const ToName = styled.div`
-  height: calc(100vh - 256px);
+  display: flex;
+  flex-grow: 1;
 `;
 
 class MainView extends React.Component {
@@ -52,10 +61,10 @@ class MainView extends React.Component {
     const childToRender = this.state.viewType === TABLE ? <UsersTable headerCols={tableData.headerCols} dataFields={tableData.dataFields} users={tableData.users} /> : <UsersGrid />;
     return (
       <ScreenDiv>
-        <Profile />
+        <Profile style={{ height: '200px', flexShrink: '0', }} />
 
         <ToName>
-          <InlineDiv width="15%"> <TreeList /> </InlineDiv>
+          <InlineDiv> <TreeList /> </InlineDiv>
           <OtherDiv >
             <SearchBar onChangeViewType={this.changeViewType} />
             <Divider style={{ height: '2px', backgroundColor: 'rgb(198, 207, 208)', }} />
