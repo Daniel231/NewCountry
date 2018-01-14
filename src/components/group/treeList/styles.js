@@ -3,7 +3,7 @@ const styles = {
     width: '100%',
     // marginTop: '4px',
     padding: 0,
-    boxShadow: '0 4px 10px 1px rgba(0,0,0,0.6)',
+    // boxShadow: '0 4px 10px 1px rgba(0,0,0,0.6)',
     // height: 'calc(100vh - 256px)',
     backgroundColor: 'white',
     minWidth: 'max-content',
