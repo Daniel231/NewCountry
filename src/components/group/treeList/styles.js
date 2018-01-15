@@ -5,9 +5,9 @@ const styles = {
     padding: 0,
     // boxShadow: '0 4px 10px 1px rgba(0,0,0,0.6)',
     // height: 'calc(100vh - 256px)',
-    backgroundColor: 'white',
     minWidth: 'max-content',
     overflowY: 'auto',
+    backgroundColor: '#e3eae9',
   },
   selectedItem: {
     backgroundColor: '#009688',
