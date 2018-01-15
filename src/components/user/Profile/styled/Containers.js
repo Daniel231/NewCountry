@@ -10,12 +10,11 @@ export const Container = styled.div`
 `;
 export const BasicDetailsContainer = styled.div`
     /* direction: rtl; */
-    flex-basis:50%;
+    // flex-basis:50%;
     display: flex;
     justify-content: flex-start;
     background-color: rgb(227, 234, 233);
-    /* flex-grow: 1; */
-    width: 50%;
+    flex-grow: 1;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-right: 3%;
@@ -31,10 +30,7 @@ export const InfoBlock = styled.div`
 
 export const ExtendedDetailsContainer = styled.div`
     display: flex;
-    /* flex-grow: 1; */
-    width: 50%;
-    flex-basis:50%;
     background-color: #D1DDDD;
     padding-top: 15px;
-    /* padding-right: 50px; */
+    flex-grow: 1;
 `;
