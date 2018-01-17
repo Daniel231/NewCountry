@@ -46,7 +46,6 @@ class MyListItem extends React.Component {
 
 
 MyListItem.defaultProps = {
-  open: false,
   expandLessIcon: null,
   expandMoreIcon: null,
   leafIcon: null,
@@ -56,7 +55,6 @@ MyListItem.defaultProps = {
 };
 
 MyListItem.propTypes = {
-  open: PropTypes.bool,
   expandLessIcon: PropTypes.node,
   expandMoreIcon: PropTypes.node,
   leafIcon: PropTypes.node,
