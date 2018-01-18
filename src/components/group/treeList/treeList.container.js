@@ -13,11 +13,6 @@ class TreeListContainer extends Component {
   }
 
   render() {
-    if(this.props.groupStore.loading) {
-      return (
-        <div>Loading...</div>
-      );
-    }
     return (
       <List data={this.props.groupStore.groupTree} valueField="id" 
         defaultSelected={this.props.selectedStore.id}

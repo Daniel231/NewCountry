@@ -41,6 +41,7 @@
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
+    "react-spinners": "^0.2.5",
     "react-tap-event-plugin": "^3.0.2",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
@@ -95,9 +96,9 @@
     ]
   },
   "babel": {
-    "plugins": [
-    ],
+    "plugins": ["emotion"],
     "presets": [
+      "stage-0",
       "airbnb",
       "react-app"
     ]

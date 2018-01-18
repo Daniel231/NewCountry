@@ -24,7 +24,9 @@ class GroupStore {
       selectGroup: asyncAction(function* selectGroup(groupId) {
         // this.loading = true;
         this.selectedGroup = this.groupsMap.get(groupId);
-        yield this.selectedGroup.fetchMembers();
+        const res = yield Promise.all([this.selectedGroup.fetchMembers(),
+          this.selectedGroup.fetchChildren()]);
+        this.mapGroupTree(res[1]);
         this.rootStore.selectedGroupStore.selectGroup(this.selectedGroup);
         // this.loading = false;
       }),
@@ -38,11 +40,12 @@ class GroupStore {
   }
 
   mapGroupTree(groupTree) {
+    if (!groupTree){
+      return;
+    }
     for (const group of groupTree) {
-      if(group instanceof Group){
-        this.groupsMap.set(group.id, group);
-        this.mapGroupTree(group.children);
-      }
+      this.groupsMap.set(group.id, group);
+      this.mapGroupTree(group.children);
     }
   }
 }
@@ -54,15 +57,23 @@ export class Group {
       title: json.title,
       id: json.id,
       children: json.children ? json.children.map(group => new Group(group)) : [],
-      hasChildren: json.children && true,
+      hasChildren: json.hasChildren && true,
       members: [],
-      open: false,
+      loading: false,
       toggleOpen: action.bound(() => {
         this.open = !this.open;
       }),
-      fetchMembers: asyncAction(function* select() {
+      // Todo: move action outside of the class - for perfomance 
+      fetchMembers: asyncAction(function* fetchMembers() {
         const members = yield GroupApi.getGroupMembers(this.id);
         this.members = members.map(member => new User(member));
+      }),
+      fetchChildren: asyncAction(function* fetchChildren() {
+        this.loading = true;
+        const children = yield GroupApi.getGroupChildren(this.id);
+        this.children = children.map(g => new Group(g));
+        this.loading = false;
+        return this.children;
       }),
     });
   }

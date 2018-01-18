@@ -22,9 +22,10 @@ class MyListItem extends React.Component {
   render() {
     const {
       nestedItems, expandLessIcon, expandMoreIcon,
-      leafIcon, children, hasChildren,
+      leafIcon, children, hasChildren, loading
     } = this.props;
     let leftIcon = leafIcon;
+    const rightIcon = loading ? leafIcon : null;
     if(nestedItems && nestedItems.length || hasChildren) {
       leftIcon = this.state.open ? expandLessIcon : expandMoreIcon;
     }
@@ -37,6 +38,7 @@ class MyListItem extends React.Component {
         }
         onNestedListToggle={this.onToggle}
         leftIcon={leftIcon}
+        rightIcon={rightIcon}
       >
         {children}
       </ListItem>
@@ -51,6 +53,7 @@ MyListItem.defaultProps = {
   leafIcon: null,
   hasChildren: false,
   initiallyOpen: false,
+  loading: false,
   nestedItems: [],
 };
 
@@ -60,6 +63,7 @@ MyListItem.propTypes = {
   leafIcon: PropTypes.node,
   hasChildren: PropTypes.bool,
   initiallyOpen: PropTypes.bool,
+  loading: PropTypes.bool,
   nestedItems: PropTypes.arrayOf(PropTypes.node),
 };
 MyListItem.muiName = 'ListItem';

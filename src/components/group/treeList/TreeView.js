@@ -36,6 +36,8 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
           valueField, 
           childrenField
         })}
+        loading={item.loading}
+        hasChildren={item.hasChildren}
         primaryTogglesNestedList
         insetChildren
         autoGenerateNestedIndicator={false}/>
