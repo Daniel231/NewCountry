@@ -7,9 +7,10 @@ import Avatar from './DetailAvatar';
 
 const Container = styled(GridContainer)`
     width: 100%;
+    overflow-y: auto;
 `;
 const Tile = styled(GridTile)`
-    margin: 20px;
+    margin: 30px;
 `;
 
 const UsersGridView = ({users, onAvatarClick}) => {

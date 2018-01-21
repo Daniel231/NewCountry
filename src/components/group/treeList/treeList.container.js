@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import styled from 'styled-components';
 import List from './';
+
+const NavContainer = styled.div`
+display: flex;
+flex-grow: 1;
+`;
 
 class TreeListContainer extends Component {
   constructor(props) {
@@ -19,10 +25,12 @@ class TreeListContainer extends Component {
       );
     }
     return (
-      <List data={this.props.groupStore.groupTree} valueField="id" 
-        defaultSelected={this.props.selectedStore.id}
-        onChange={this.onItemSelected}
-      />
+      <NavContainer>
+        <List data={this.props.groupStore.groupTree} valueField="id" 
+          defaultSelected={this.props.selectedStore.id}
+          onChange={this.onItemSelected}
+        />
+      </NavContainer>
     );
   }
 }

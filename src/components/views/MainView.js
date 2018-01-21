@@ -1,45 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
-import { UsersGrid, UsersTable, Profile, SearchBar } from '../user';
-import TreeList from '../group/treeList/treeList.container';
-import { tableData } from './mock';
 import Divider from 'material-ui/Divider';
+import { UsersGrid, UsersTable, Profile, SearchBar } from '../user';
+import SideNav from '../group/sideNav';
+import { tableData } from './mock';
 
 const TABLE = 1;
 const GRID = 2;
 
-const InlineDiv = styled.div`
-  display: inline-block;
-  vertical-align: top;
-  width: 15%;
-  position: absolute;
-  width: ${props => (props.width ? props.width : '')};
-`;
+// height: calc(100vh - 260px);
 
-const OtherDiv = styled.div`
+const MainDiv = styled.div`
   width: 80%;
-  float: right;
-  height: calc(100vh - 260px);
   margin-left: 3%;
-  margin-right: calc(15%);
   padding-right: 33px;
   min-width: 666px;
+  display: flex;
+  flex-direction: column;
 `;
 
+// height: calc(100vh - 64px);
+
 const ScreenDiv = styled.div`
+  display: flex;
   height: calc(100vh - 64px);
+  flex-direction: column;
   background-color: #e3eae9;
 `;
 
+// height: calc(100vh - 256px);
+
 const ToName = styled.div`
-  height: calc(100vh - 255px);
+  display: flex;
+  flex-grow: 1;
 `;
 
 class MainView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewType: TABLE,
+      viewType: GRID,
     };
     this.changeViewType = this.changeViewType.bind(this);
   }
@@ -52,19 +52,15 @@ class MainView extends React.Component {
     const childToRender = this.state.viewType === TABLE ? <UsersTable headerCols={tableData.headerCols} dataFields={tableData.dataFields} users={tableData.users} /> : <UsersGrid />;
     return (
       <ScreenDiv>
-        <div>
-          <Profile />
-        </div>
-
+        <Profile style={{ height: '200px', flexShrink: '0', }} />
         <ToName>
-          <InlineDiv width="15%"> <TreeList /> </InlineDiv>
-          <OtherDiv >
+          <SideNav />
+          <MainDiv >
             <SearchBar onChangeViewType={this.changeViewType} />
-            <Divider />
+            <Divider style={{ height: '2px', backgroundColor: 'rgb(198, 207, 208)', }} />
             {childToRender}
-          </OtherDiv>
+          </MainDiv>
         </ToName>
-
       </ScreenDiv>
     );
   }

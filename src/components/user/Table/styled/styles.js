@@ -4,8 +4,10 @@ const Styles = {
     // maxHeight:'440px',
     marginLeft: '2%',
     marginTop: '20px',
-    overflow: 'auto',
-    height: 'calc(100% - 63px)',
+    // overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    // height: 'calc(100% - 63px)',
   },
   avatarColumn: {
     width: '35px',
