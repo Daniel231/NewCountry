@@ -34,3 +34,12 @@ export const ExtendedDetailsContainer = styled.div`
     padding-top: 15px;
     flex-grow: 1;
 `;
+
+export const Triangle = styled.div`
+width: 0;
+height: 0;
+border-top: 25px solid transparent;
+border-right: 25px solid #e3eae9;
+border-bottom: 25px solid transparent;
+margin-top: 55px;
+`;

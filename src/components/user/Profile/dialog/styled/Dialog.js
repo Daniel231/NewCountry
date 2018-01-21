@@ -6,30 +6,44 @@ import E from '../../extendedDetails';
 
 const ProfileDialog = styled(Dialog).attrs({
   bodyStyle: {
-    backgroundColor: 'rgb(228, 234, 234)',
+    backgroundColor: '#E3E9E9',
     paddingBottom: '0px',
-    overflowX: 'hidden',
+    overflowY: 'inherit',
+    // width: '60vh',
+    // paddingBottom: '0px',
+    // overflowX: 'hidden',
   },
   titleStyle: {
-    backgroundColor: 'rgb(228, 234, 234)',
-    paddingBottom: '2px',
+    backgroundColor: '#E3E9E9',
+    borderTopLeftRadius: '10px',
+    borderTopRightRadius: '10px',
+    fontWeight: 600,
+    fontSize: 26,
+    paddingBottom: '10px',
+    // paddingBottom: '2px',
   },
   contentStyle: {
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'black',
-    borderRadius: '20px',
-    width: 'fit-content',
-    maxWidth: '70%',
+    // backgroundColor: '#E3E9E9',
+    // display: 'flex',
+    // justifyContent: 'center',
+    // borderRadius: '20px',
+    // width: 'fit-content',
+    // maxWidth: '70%',
   },
   actionsContainerStyle: {
-    backgroundColor: 'rgb(33, 163, 151)',
+    backgroundColor: '#00A297',
     padding: '18px',
     display: 'flex',
+    borderBottomLeftRadius: '10px',
+    borderBottomRightRadius: '10px',
   },
 })`
-& * {
-    direction:rtl;   
+& > div > div {
+    direction:rtl;
+}
+& > div > div > div {
+  direction:rtl;
+  border-radius: 10px !important;
 }
 `;
 
@@ -37,20 +51,24 @@ export const Avatar = styled(ProfileAvatar).attrs({
   size: 150,
   style: {
     position: 'absolute',
-    right: '45%',
+    right: 'calc(50% - 75px)',
     bottom: '86%',
   },
 })``;
 
 export const ExtendedDetails = styled(E)`
-    width: 108%;
-    padding-top: 10px;
-    /* padding-right: 26.6%; */
-    margin-right: -3%;
-    padding-bottom: 10px;
-    margin-top: 10px;
-    background-color: #D1DDDD;
+    // background-color: #D0DCDC;
+    // width: calc(100% + 48px);
+    // margin-right: -24px;
+    // padding-bottom: 24px;
 
+`;
+
+export const MoreInfoDiv = styled.div`
+  background-color: #D0DCDC;
+  width: calc(100% + 48px);
+  margin-right: -24px;
+  padding-bottom: 24px;
 `;
 
 export default ProfileDialog;

@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Line, Triangle, DetailBlock, Container } from './styled/Containers';
+import { Line, DetailBlock, Container } from './styled/Containers';
 import { DetailField as F, Normal as V } from './styled/Text';
 
 const ExtendedDetails = ({ userDetails, className, }) => {
   return (
     <Container className={className}>
-      <Triangle />
       <DetailBlock dashed>
         <Line><F>מס' אישי:</F><V>{userDetails.id}</V></Line>
         <Line><F>תעודת זהות:</F><V>{userDetails.passport}</V></Line>

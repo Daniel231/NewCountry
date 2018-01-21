@@ -5,12 +5,14 @@ import ExtendedDetails from './extendedDetails';
 import Dialog from './dialog';
 
 // styled components
-import { Container, BasicDetailsContainer, InfoBlock, ExtendedDetailsContainer } from './styled/Containers';
+import { Container, BasicDetailsContainer, InfoBlock, ExtendedDetailsContainer, Triangle } from './styled/Containers';
 import { Title, SubTitle } from './styled/Text';
 import { Primary as Button } from './styled/Button';
 
+// http://i.dailymail.co.uk/i/pix/2014/12/10/23F10A9400000578-2862630-image-a-21_1418218720071.jpg
+// https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg
 
-const img = 'https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg';
+const img = 'https://i.pinimg.com/736x/eb/36/2f/eb362f8c2ae86b3bfe91417d8c2e2245--king-kong-empire-state-building.jpg';
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -41,10 +43,11 @@ class ProfileHeader extends React.Component {
               <SubTitle><span> {userDetails.unit} | {userDetails.team} </span></SubTitle>
               <SubTitle><span> {userDetails.jobDesc} </span></SubTitle>
             </div>
-            <Button label="לפרופיל המלא" onClick={this.onDialogOpen} />
+            <Button primary label="לפרופיל המלא" onClick={this.onDialogOpen} />
           </InfoBlock>
         </BasicDetailsContainer>
         <ExtendedDetailsContainer>
+          <Triangle />
           <ExtendedDetails userDetails={userDetails} />
         </ExtendedDetailsContainer>
         <Dialog
