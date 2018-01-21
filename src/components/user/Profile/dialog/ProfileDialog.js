@@ -34,11 +34,11 @@ const ProfileDialog = ({ userDetails, open, onClose }) => {
       <div>
         <span style={TextStyles.mediumText}> {userDetails.unit + " | " + userDetails.team}</span>
       </div>
-      <Primary
+      {/* <Primary
         primary
         label="שלח בקשה לעדכון פרטים"
         style={{ float: 'right', marginTop: '-40px', borderRadius: '25px', }}
-      />
+      /> */}
       <hr />
       <div>
         <div style={{ padding: '10px 2px 40px 50px', }}>

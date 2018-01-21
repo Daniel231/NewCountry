@@ -95,8 +95,7 @@
     ]
   },
   "babel": {
-    "plugins": [
-    ],
+    "plugins": [],
     "presets": [
       "airbnb",
       "react-app"

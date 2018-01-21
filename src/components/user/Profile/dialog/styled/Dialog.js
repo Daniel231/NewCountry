@@ -8,7 +8,7 @@ const ProfileDialog = styled(Dialog).attrs({
   bodyStyle: {
     backgroundColor: '#E3E9E9',
     paddingBottom: '0px',
-    overflowY: 'inherit',
+    overflowY: 'auto',
     // width: '60vh',
     // paddingBottom: '0px',
     // overflowX: 'hidden',
