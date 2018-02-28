@@ -1,6 +1,6 @@
 import { extendObservable } from 'mobx';
 import { asyncAction } from 'mobx-utils';
-import UserApi from '../api/mockUserApi';
+import { UserApi } from '../api';
 
 class UserStore {
   // @observable myUser;

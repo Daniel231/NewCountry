@@ -1,6 +1,5 @@
 import { extendObservable, computed,  action} from 'mobx';
 import { asyncAction } from 'mobx-utils';
-import GroupApi from '../api/mockGroupApi';
 import { Group } from './groupStore';
 import { User } from './userStore';
 

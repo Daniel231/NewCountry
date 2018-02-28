@@ -30,6 +30,7 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
         value = {value}
         key = {index}
         primaryText= {item[textField]}
+        hasChildren = {item.hasChildren}
         nestedItems = {createListItemsJsx({
           data: item[childrenField],
           textField,
