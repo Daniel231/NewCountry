@@ -28,9 +28,13 @@ class GroupStore {
         this.selectedGroup = this.groupsMap.get(groupId);
         if(this.selectedGroup.hasChildren && !this.selectedGroup.children) {
           const g = yield GroupApi.getGroup(groupId);
-          const children = g.children.map(child => new Group(child));
-          this.selectedGroup.children = children;
-          this.mapGroupTree(this.selectedGroup);
+          if(g.children && g.children.length !== 0) {
+            const children = g.children.map(child => new Group(child));
+            this.selectedGroup.children = children;
+            this.mapGroupTree(this.selectedGroup);
+          } else {
+            this.selectedGroup.hasChildren = false;
+          }
         }
         yield this.selectedGroup.fetchMembers();
         this.rootStore.selectedGroupStore.selectGroup(this.selectedGroup);
@@ -57,10 +61,10 @@ export class Group {
   constructor(json) {
     const parsedChildren = Group.parseChildren(json.children);
     extendObservable(this, {
-      title: json.title,
-      id: json.id,
+      title: json.name,
+      id: json._id,
       children: parsedChildren,
-      hasChildren: !json.isAleaf,
+      hasChildren: true, // because the server won't give that information
       members: [],
       open: false,
       toggleOpen: action.bound(() => {
@@ -74,7 +78,7 @@ export class Group {
   }
   static parseChildren(children) {
     if (children && children.length !== 0 && typeof children[0] === 'object') {
-      return children.map(group => new Group(group));  
+      return children.map(group => new Group(group));
     }
     return null;
   }

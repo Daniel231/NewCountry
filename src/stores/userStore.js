@@ -11,6 +11,7 @@ class UserStore {
       myUser: null,
       getMyUser: asyncAction(function* getMyUser() {
         const profile = yield UserApi.getMyUser();
+        console.log(profile);
         this.myUser = new User(profile);
       }),
     });
@@ -20,8 +21,8 @@ class UserStore {
 
 export class User {
   constructor(json) {
-    this.id = json.id;
-    this.name = json.name;
+    this.id = json._id;
+    this.name = json.fullName;
     this.role = json.role;
     this.isGroupAdmin = json.isGroupAdmin;
     this.isAdmin = json.isAdmin;
