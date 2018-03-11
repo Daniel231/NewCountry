@@ -21,7 +21,7 @@ class UserStore {
 
 export class User {
   constructor(json) {
-    this.id = json._id;
+    this.id = json.id;
     this.name = json.fullName;
     this.role = json.role;
     this.isGroupAdmin = json.isGroupAdmin;

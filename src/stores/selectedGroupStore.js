@@ -15,7 +15,7 @@ class SelectedGroupStore {
       filterTerm: '',
       filteredMembers: computed(function filteredMembers() {
         return this.members.filter(user =>
-          user.name.indexOf(this.filterTerm) !== -1);
+          user.name.toLowerCase().indexOf(this.filterTerm.toLowerCase()) !== -1);
       }),
       filter: action.bound(function filter (term) {
         this.filterTerm = term;
