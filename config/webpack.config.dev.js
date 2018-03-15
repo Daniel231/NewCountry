@@ -258,4 +258,7 @@ module.exports = {
   performance: {
     hints: false,
   },
+  externals: {
+    'Config': JSON.stringify(require('../config.json')),
+  },
 };

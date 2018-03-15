@@ -1,55 +1,55 @@
 export const flatGroups = [
   {
-    title: 'שורש',
-    id: '1',
+    name: 'שורש',
+    _id: '1',
     children: ['a2', '3', '4'],
     isAleaf: false,
   },
   {
-    title: 'מדור א',
-    id: 'a2',
+    name: 'מדור א',
+    _id: 'a2',
     children: ['5', '6'],
     isAleaf: false,
   },
   {
-    title: 'מדור ב',
-    id: '3',
+    name: 'מדור ב',
+    _id: '3',
     children: ['7'],
     isAleaf: false,
   },
   {
-    title: 'מדור ג',
-    id: '4',
+    name: 'מדור ג',
+    _id: '4',
     children: [],
     isAleaf: true,
   },
   {
-    title: 'צוות1',
-    id: '5',
+    name: 'צוות1',
+    _id: '5',
     children: [],
     isAleaf: true,
   },
   {
-    title: 'צוות552',
-    id: '6',
+    name: 'צוות552',
+    _id: '6',
     children: [],
     isAleaf: true,
   },
   {
-    title: 'צוות3',
-    id: '7',
+    name: 'צוות3',
+    _id: '7',
     children: ['rr'],
     isAleaf: false,
   },
   {
-    title: 'red ribbon',
-    id: 'rr',
+    name: 'red ribbon',
+    _id: 'rr',
     children: [],
     isAleaf: true,
   }
 ];
 
-export const ROOT_GROUP_ID = flatGroups[0].id;
+export const ROOT_GROUP_ID = flatGroups[0]._id;
 
 export const myUser = {
   fullJobDesc: "לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיא" +
@@ -152,15 +152,15 @@ export const groups = [
 ];
 export const tableData = {
   users: [
-    { name: 'אלעד', role: 'טיפש', isGroupAdmin: true }, { name: 'יונתן', role: 'חכם', isAdmin: false },
-    { name: 'יונתן', role: 'חכם', isAdmin: false }, { name: 'יונתן', role: 'חכם', isAdmin: false },
-    { name: 'יונתן', role: 'היררכיקה', isAdmin: false }, { name: 'יונתן', role: 'היררכיקה', isAdmin: true },
-    { name: 'יונתן', role: 'היררכיקה', isAdmin: false }, { name: 'יונתן', role: 'היררכיקה', isAdmin: true },
-    { name: 'יונתן', role: 'היררכיקה', isAdmin: false }, { name: 'יונתן', role: 'היררכיקה', isAdmin: true },
-    { name: 'יונתן', role: 'היררכיקה', isAdmin: false }, { name: 'יונתן', role: 'היררכיקה', isAdmin: true },
-    { name: 'יונתן', role: 'היררכיקה', isAdmin: false }, { name: 'יונתן', role: 'היררכיקה', isAdmin: true },
-    { name: 'יונתן', role: 'היררכיקה', isAdmin: false }, { name: 'יונתן', role: 'היררכיקה', isAdmin: true },
-    { name: 'יונתן', role: 'היררכיקה', isAdmin: false }, { name: 'יונתן', role: 'היררכיקה', isAdmin: true }
+    { fullName: 'אלעד', role: 'טיפש', isGroupAdmin: true }, { fullName: 'יונתן', role: 'חכם', isAdmin: false },
+    { fullName: 'יונתן', role: 'חכם', isAdmin: false }, { fullName: 'יונתן', role: 'חכם', isAdmin: false },
+    { fullName: 'יונתן', role: 'היררכיקה', isAdmin: false }, { fullName: 'יונתן', role: 'היררכיקה', isAdmin: true },
+    { fullName: 'יונתן', role: 'היררכיקה', isAdmin: false }, { fullName: 'יונתן', role: 'היררכיקה', isAdmin: true },
+    { fullName: 'יונתן', role: 'היררכיקה', isAdmin: false }, { fullName: 'יונתן', role: 'היררכיקה', isAdmin: true },
+    { fullName: 'יונתן', role: 'היררכיקה', isAdmin: false }, { fullName: 'יונתן', role: 'היררכיקה', isAdmin: true },
+    { fullName: 'יונתן', role: 'היררכיקה', isAdmin: false }, { fullName: 'יונתן', role: 'היררכיקה', isAdmin: true },
+    { fullName: 'יונתן', role: 'היררכיקה', isAdmin: false }, { fullName: 'יונתן', role: 'היררכיקה', isAdmin: true },
+    { fullName: 'יונתן', role: 'היררכיקה', isAdmin: false }, { fullName: 'יונתן', role: 'היררכיקה', isAdmin: true }
   ],
   headerCols: ['שם', 'תפקיד'],
   dataFields: ['name', 'role']

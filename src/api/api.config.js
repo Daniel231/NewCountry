@@ -1,6 +1,8 @@
+import * as Config from 'Config';
+
 const config = {
-  root: 'http://104.42.105.220/api',
-  mock: false,
+  root: Config.API_URL,
+  mock: !(Config.API_URL && true),
   axiosConfig: {
     headers: { 'Access-Control-Allow-Origin': '*', },
     crossdomain: true,

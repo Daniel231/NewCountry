@@ -1,6 +1,6 @@
 import config from './api.config';
 import MockUserApi from './mock/mockUserApi';
-import MockGroupApi from './mock/groupApi';
+import MockGroupApi from './mock/mockGroupApi';
 import userApi from './UserApi';
 import groupApi from './groupApi';
 

@@ -3,8 +3,8 @@ import delay from './delay';
 import { groups, tableData, flatGroups, ROOT_GROUP_ID } from './mock';
 
 function populateGroup(groupId) {
-  const group = _.find(flatGroups, { id: groupId, });
-  group.children = group.children.map(id => _.find(flatGroups, { id, }));
+  const group = _.find(flatGroups, { _id: groupId, });
+  group.children = group.children.map(_id => _.find(flatGroups, { _id, }));
   return group;
 }
 
