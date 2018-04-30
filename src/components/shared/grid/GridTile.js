@@ -5,11 +5,11 @@ const GridTile = ({grow, shrink, basis, children, className}) => {
     const style = {
         display:'flex',
         flex: `${grow} ${shrink} ${basis}`
-    }
+    };
     return (
         <div className={className} style={style}>{children}</div>
     );
-}
+};
 
 GridTile.defaultProps = {
     grow: 0,

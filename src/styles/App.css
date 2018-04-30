@@ -1,19 +1,23 @@
 html,body {
+  margin: 0;
 	height: 100%;
 	font-family: sans-serif;
-	overflow: hidden;
+	overflow: auto;
 }
-
-.mainDiv {
-	display: flex;
-	flex-wrap: wrap;
+#root {
+  direction: rtl;
+  min-height: '100vh';
 }
-
-.hebrew {
-	direction: rtl;
-	/* float: right; */
+::-webkit-scrollbar-thumb {
+  /* background-color: #b7b7b7;
+  border-radius: 5px; */
+  /* border: 4px solid rgba(0, 0, 0, 0); */
+  background-clip: padding-box;
+  -webkit-border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);  
 }
-.profile {
-	direction: rtl;
-	width:100%;
+::-webkit-scrollbar {
+  /* width: 0.2em; */
+  width: 5px;
 }

@@ -1,111 +1,71 @@
 import React from 'react';
 import styled from 'styled-components';
-import {GridContainer, GridRow, GridTile} from '../shared/grid'
-import {UsersGrid, ProfileHeader, UsersTable} from '../user';
-import SideMenu from '../group/treeList';
+import Divider from 'material-ui/Divider';
+import { UsersGrid, UsersTable, Profile, SearchBar } from '../user';
+import SideNav from '../group/sideNav';
+import { tableData } from './mock';
 
+const TABLE = 1;
+const GRID = 2;
 
-const Container = styled(GridContainer)`
-    min-height: 100%;
+// height: calc(100vh - 260px);
+
+const MainDiv = styled.div`
+  width: 80%;
+  margin-left: 3%;
+  padding-right: 33px;
+  min-width: 666px;
+  display: flex;
+  flex-direction: column;
 `;
 
-const ScreenRow = styled(GridRow)`
-    flex-grow: 1
+// height: calc(100vh - 64px);
+
+const ScreenDiv = styled.div`
+  display: flex;
+  height: calc(100vh - 64px);
+  flex-direction: column;
+  background-color: #e3eae9;
 `;
 
-const Tile = styled(GridTile)`
-  overflow: auto;
-  max-height: 100vh;
+// height: calc(100vh - 256px);
+
+const ToName = styled.div`
+  display: flex;
+  flex-grow: 1;
 `;
 
-const MainView = () => {
+class MainView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewType: GRID,
+    };
+    this.changeViewType = this.changeViewType.bind(this);
+  }
+
+  changeViewType (viewType) {
+    return () => this.setState({ viewType, });
+  }
+
+  render() {
+    const childToRender = this.state.viewType === TABLE ? <UsersTable headerCols={tableData.headerCols} dataFields={tableData.dataFields} users={tableData.users} /> : <UsersGrid />;
     return (
-        <Container>
-            <GridRow>
-                <GridTile basis={'100%'}><ProfileHeader/></GridTile>
-            </GridRow>
-            <ScreenRow>
-                <GridTile basis={'16%'}><SideMenu data={groups}/></GridTile>
-                <Tile basis={'80%'}><UsersGrid users={tableData.users} onAvatarClick={(u)=>{console.log(u)}}/></Tile>
-                {/* <Tile basis={'84%'}><UsersTable {...tableData}/></Tile> */}
-            </ScreenRow>
-        </Container>
+      <ScreenDiv>
+        <Profile style={{ height: '200px', flexShrink: '0', }} />
+        <ToName>
+          <SideNav />
+          <MainDiv >
+            <SearchBar onChangeViewType={this.changeViewType} />
+            <Divider style={{ height: '2px', backgroundColor: 'rgb(198, 207, 208)', }} />
+            {childToRender}
+          </MainDiv>
+        </ToName>
+      </ScreenDiv>
     );
+  }
 }
 
 export default MainView;
 
-
-let groups = [
-    {
-      title: "אלעד",
-      children: [
-        {
-          title: "הבוס"
-        },
-        {
-          title: "העייף",
-          children: [
-            { title: "מאוד" }
-          ]
-        }
-      ]
-    },
-    {
-      title: "יונתן",
-      children: [
-        {
-          title: "האפורי"
-        }
-      ]
-    },
-    {
-      title: "יונתן",
-      children: [
-        {
-          title: "האפורי"
-        }
-      ]
-    },
-    {
-      title: "יונתן",
-      children: [
-        {
-          title: "האפורי"
-        }
-      ]
-    },
-    {
-      title: "יונתן",
-      children: [
-        {
-          title: "האפורי"
-        }
-      ]
-    },
-    {
-      title: "יונתן",
-      children: [
-        {
-          title: "האפורי"
-        }
-      ]
-    }
-  ];
-  
-  let tableData = {
-    users: [
-      { name: "אלעד", role: "טיפש", isGroupAdmin: true }, { name: "יונתן", role: "חכם", isAdmin: false },
-      { name: "יונתן", role: "חכם", isAdmin: false }, { name: "יונתן", role: "חכם", isAdmin: false },
-      { name: "יונתן", role: "היררכיקה", isAdmin: false }, { name: "יונתן", role: "היררכיקה", isAdmin: true },
-      { name: "יונתן", role: "היררכיקה", isAdmin: false }, { name: "יונתן", role: "היררכיקה", isAdmin: true },
-      { name: "יונתן", role: "היררכיקה", isAdmin: false }, { name: "יונתן", role: "היררכיקה", isAdmin: true },
-      { name: "יונתן", role: "היררכיקה", isAdmin: false }, { name: "יונתן", role: "היררכיקה", isAdmin: true },
-      { name: "יונתן", role: "היררכיקה", isAdmin: false }, { name: "יונתן", role: "היררכיקה", isAdmin: true },
-      { name: "יונתן", role: "היררכיקה", isAdmin: false }, { name: "יונתן", role: "היררכיקה", isAdmin: true },
-      { name: "יונתן", role: "היררכיקה", isAdmin: false }, { name: "יונתן", role: "היררכיקה", isAdmin: true }
-    ],
-    headerCols: ["שם", "תפקיד"],
-    dataFields: ["name", "role"]
-  
-  }
+// export default connect(mapStateToProps)(MainView);

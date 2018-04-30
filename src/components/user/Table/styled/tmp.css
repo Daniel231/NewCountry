@@ -1,0 +1,12 @@
+table td:nth-child(4) {
+  color: #75868d;
+}
+
+table td:nth-child(3), th:nth-child(3) {
+  width: 20%;
+  min-width: 100px;
+}
+
+table tr th {
+  color: 'black';
+}

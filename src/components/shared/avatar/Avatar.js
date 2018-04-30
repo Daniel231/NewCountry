@@ -61,4 +61,14 @@ const BadgeAvatar = ({src, children, style, size, badgeStyle, innerStyle, badgeC
     innerElem;
 };
 
+BadgeAvatar.propTypes = {
+    src: PropTypes.string,
+    style: PropTypes.object,
+    innerStyle: PropTypes.object,
+    badgeStyle: PropTypes.object,
+    badgeContent: PropTypes.element,
+    size: PropTypes.number,
+    onClick: PropTypes.func
+};
+
 export default BadgeAvatar;
