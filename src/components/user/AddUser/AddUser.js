@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import AppBar from '../../common/AppBar';
+import Tabs from '../../shared/Tabs/Tabs';
 
 
 class AddUser extends Component{
@@ -7,7 +7,7 @@ class AddUser extends Component{
 render(){
     return(
         <React.Fragment>
-           <h1>הוספת משתמש</h1>
+           <Tabs/>
         </React.Fragment>
     )
 }
