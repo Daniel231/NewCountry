@@ -1,0 +1,16 @@
+.orgProps{
+    display: table-caption;
+    position: relative;
+    padding-right: 27px;
+    margin-top: 25px;
+    width: 880px;
+    margin-bottom: 60px;
+}
+
+.orgProps input{
+    text-align: right;
+}
+
+.orgProps label{
+    color: black;
+}

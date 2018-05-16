@@ -17,6 +17,7 @@ const MainDiv = styled.div`
   min-width: 666px;
   display: flex;
   flex-direction: column;
+
 `;
 
 // height: calc(100vh - 64px);

@@ -2,7 +2,8 @@ html,body {
   margin: 0;
 	height: 100%;
 	font-family: sans-serif;
-	overflow: auto;
+  overflow: auto;
+
 }
 #root {
   direction: rtl;
@@ -20,4 +21,5 @@ html,body {
 ::-webkit-scrollbar {
   /* width: 0.2em; */
   width: 5px;
+
 }

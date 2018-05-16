@@ -6,6 +6,7 @@ import List from './';
 const NavContainer = styled.div`
 display: flex;
 flex-grow: 1;
+direction: rtl;
 `;
 
 class TreeListContainer extends Component {
