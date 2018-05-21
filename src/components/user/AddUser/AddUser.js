@@ -14,9 +14,10 @@ class AddUser extends Component{
     render(){
         return(
             <Background >
-                <Avatar/>  
+                  
                 <Tabs>
                     <Tab label='חייל'>
+                        <Avatar/>
                         <div className='id_search'>
                             <strong>הקלד מספר אישי להשלמת פרטי החייל:</strong>
                             <div style={{ display: 'flex'}}>
@@ -28,6 +29,7 @@ class AddUser extends Component{
                         <OrgProps/>
                     </Tab>
                     <Tab label='אזרח'>
+                        <Avatar/>
                         <div className='id_search'>
                             <strong>הקלד את פרטי האזרח שנקלט ליחידה</strong>                                                    
                         </div>

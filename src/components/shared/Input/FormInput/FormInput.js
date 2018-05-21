@@ -19,11 +19,24 @@ const FormAutoComplete = ( props )=> (
             underlineShow={false}
             hintStyle={{
                 fontSize: 15,
-                color: '#7B8A8D', 
-            }}  
+                color: '#7B8A8D',
+                bottom: 0, 
+            }} 
             style={{
                 height: 25,
+                marginTop: 10,               
             }}
+            listStyle={{
+                // backgroundColor: 'green',
+            }}
+            menuStyle={{
+                top: 60,
+            }}
+            textFieldStyle={{
+                height: 25,
+            }}
+            
+           
           //   onUpdateInput={this.handleUpdateInput}
         />
     </div>   

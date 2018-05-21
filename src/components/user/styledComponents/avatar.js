@@ -31,9 +31,9 @@ const StyleAddUserAvatar = styled(Avatar).attrs({
       zIndex: 140,
       border: 'none',
       backgroundColor: 'rgb(0, 165, 146)',
-      position: 'relative',
-      left: 1200,
-      top: 110,
+      position: 'absolute',
+      left: 940,
+      bottom: 480,
       fontSize:0,
       boxShadow:'0px 0px 24px 0px rgba(0,0,0,0.36)',
   }

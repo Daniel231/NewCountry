@@ -10,10 +10,11 @@ const Input=styled.input.attrs({
     margin-left: 10px;
     border-radius: 15px;
     border-width: 0px;
+    font-size: 16px;
+    padding-right: 10px;
 
     ::placeholder{
-        font-size: 15px;
-        padding-right: 10px;
+        font-size: 15px;  
         color:#7B8A8D;
     }
 
@@ -30,6 +31,7 @@ const FormInput = styled.input.attrs({
     border-width: 0px;
     // border-bottom: 1px solid #7B8A8D;
     text-align: center;
+    font-size: 16px;
 
     :focus{
         outline:none;
