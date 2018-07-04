@@ -28,10 +28,12 @@ const FormInput = styled.input.attrs({
     type:'text',
 })`
     background-color: inherit;
+    // background-color: yellow;
     border-width: 0px;
-    // border-bottom: 1px solid #7B8A8D;
     text-align: center;
     font-size: 16px;
+    width:100%;
+    // position: absolute;
 
     :focus{
         outline:none;

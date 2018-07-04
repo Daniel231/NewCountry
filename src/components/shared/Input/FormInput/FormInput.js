@@ -6,16 +6,21 @@ import './FormInput.css';
 const FormInput = ( props )=> (
     <div className='FormInput'>
         <label className='label'>{props.label}</label>
-        <Input name={props.name} size={props.size} placeholder={props.placeholder}/>
+        <Input {...props}/>
     </div>   
 );
 
 const FormAutoComplete = ( props )=> (
     <div className='FormInput'>
-        <label className='label'>{props.label}</label>
+        <label  className='label'
+                style={{
+                    height: 22,
+                    marginTop: 13,}}
+                    >
+                        {props.label}
+        </label>
         <AutoComplete
-            hintText={props.hintText}
-            dataSource={props.dataSource}
+            {...props}
             underlineShow={false}
             hintStyle={{
                 fontSize: 15,
@@ -26,18 +31,12 @@ const FormAutoComplete = ( props )=> (
                 height: 25,
                 marginTop: 10,               
             }}
-            listStyle={{
-                // backgroundColor: 'green',
-            }}
             menuStyle={{
                 top: 60,
             }}
             textFieldStyle={{
                 height: 25,
             }}
-            
-           
-          //   onUpdateInput={this.handleUpdateInput}
         />
     </div>   
 );

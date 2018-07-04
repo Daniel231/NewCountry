@@ -33,7 +33,7 @@ const StyleAddUserAvatar = styled(Avatar).attrs({
       backgroundColor: 'rgb(0, 165, 146)',
       position: 'absolute',
       left: 940,
-      bottom: 480,
+      bottom: 500,
       fontSize:0,
       boxShadow:'0px 0px 24px 0px rgba(0,0,0,0.36)',
   }

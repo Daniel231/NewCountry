@@ -1,9 +1,12 @@
 import React from 'react';
 import TreeList from '../../../group/treeList/treeList.container';
 import SelectField from '../../../shared/SelectField/styleSelectField';
-import {FormInput,FormAutoComplete as AutoComplete} from '../../../shared/Input/FormInput/FormInput';
+import {FormInput,FormAutoComplete} from '../../../shared/Input/FormInput/FormInput';
 import './OrgProps.css';
 
+///////////////////////////
+import MenuItem from 'material-ui/MenuItem';
+//////////////////////////
 
 const dataSource = [
     'd',
@@ -11,27 +14,42 @@ const dataSource = [
     'dee'
 ];
 
-const OrgProps = () => (
+const OrgProps = (props) => (
     <div className='orgProps'>
         <label><strong>מחלקה ותפקיד </strong>השלם את הפרטים הבאים:</label>
-        <SelectField hintText="בחר מחלקה">
+        <SelectField hintText="בחר מחלקה" value={'try'}>
             <div style={menuDivSytle}>
                 <div>בחר מחלקה אליה מגיע החייל</div>
                 <div id='addOU' style={addOUSytle}>+ הוסף מחלקה</div>
             </div>
-            <TreeList />
+            <MenuItem value='try' primaryText='menu text: primaryText'/>
+            <TreeList/>
         </SelectField>
-        <AutoComplete
+        
+        <FormAutoComplete
           label='תפקיד:'
           hintText="הקלד תפקיד"
           dataSource={dataSource}
-        //   onUpdateInput={this.handleUpdateInput}
+        // ??????????????
+        // are we want to harden the selection to the menu? (onNewRequest/onUpdateInput}
+        // ???????????????
+          onUpdateInput={(e)=>{
+            console.log(`e: ${e}`)  
+            // props.changed(e)
+        }}
         />
-        <FormInput 
+        
+        <FormInput                                     
             name='jobDescription' 
             placeholder='הקלד פה תיאור תפקיד' 
             label='תיאור:' 
-            size={20}/>
+            value={props.value.jobDescription}
+            onChange={(e)=>props.changed(e)}/>
+        <FormInput                                     
+            name='secondaryUser' 
+            label='משתמש משני:' 
+            value={props.value.secondaryUser}
+            onChange={(e)=>props.changed(e)}/>
     </div>
         
 );

@@ -6,21 +6,23 @@ const styles={
     marginTop:10,
 }
 
-const StrProps = () => (
+const StrProps = (props) => (
     <div className='StrProps'>
         <label>סיווג ביטחוני (למילוי ע"י הקב"ם בלבד):</label>
-        <RadioButtonGroup name="shipSpeed" defaultSelected="not_light">
+        <RadioButtonGroup 
+            defaultSelected={false}
+            name='classification'
+            onChange={(e)=>props.changed(e)}>
         <RadioButton
-            value="classified"
+            value={true}
             label="עבר סיווג ביטחוני"
-            // labelStyle={styles}
-            // iconStyle={styles}
+            name="classified"
             style={styles}
         />
         <RadioButton
-            value="nonClassified"
+            value={false}
             label="ללא סיווג"
-            // labelStyle={styles}
+            name="nonClassified"
             style={styles}
         />
         </RadioButtonGroup>  
