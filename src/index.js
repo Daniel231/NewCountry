@@ -1,13 +1,32 @@
-import 'babel-polyfill';
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
+// import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'mobx-react';
+// import * as stores from './stores';
+import RootStore from './stores/rootStore';
+import {BrowserRouter} from 'react-router-dom';
+// import createSagaMiddleware from 'redux-saga';
+
 import App from './components/App';
+// import App from './components/user/AddUser/AddUser';
 import './styles/App.css';
-import '../node_modules/react-grid-layout/css/styles.css';
-import '../node_modules/react-resizable/css/styles.css';
+
+// import rootReducer from './rootReducer';
+// import { getUser } from './components/user/user.saga';
+
+// const sagaMiddleware = createSagaMiddleware();
+
+// const store = createStore(
+//   rootReducer,
+//   applyMiddleware(sagaMiddleware)
+// );
+
+// sagaMiddleware.run(getUser);
 
 
 render(
-    <App />,
-    document.getElementById('app')
+  <Provider store={new RootStore()}>
+   <BrowserRouter><App /></BrowserRouter>
+  </Provider>,
+  document.getElementById('root')
 );

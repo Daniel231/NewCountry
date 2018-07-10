@@ -1,14 +1,16 @@
 import React from 'react';
+import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {GridContainer, GridTile, GridRow} from '../../shared/grid';
+import {GridContainer, GridTile, GridRow } from '../../shared/grid';
 import Avatar from './DetailAvatar';
 
 const Container = styled(GridContainer)`
     width: 100%;
+    overflow-y: auto;
 `;
 const Tile = styled(GridTile)`
-    margin: 20px;
+    margin: 30px;
 `;
 
 const UsersGridView = ({users, onAvatarClick}) => {
@@ -29,4 +31,9 @@ UsersGridView.propTypes = {
     onAvatarClick: PropTypes.func
 }
 
-export default UsersGridView;
+export default inject(
+  root => ({
+    users: root.store
+      .selectedGroupStore.filteredMembers,
+  })
+)(observer(UsersGridView));

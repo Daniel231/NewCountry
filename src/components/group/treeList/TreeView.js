@@ -12,10 +12,6 @@ import MyListItem from './ListItem';
 let SelectableList = makeSelectable(List);
 SelectableList = wrapState(SelectableList);
 
-
-
-
-
 /**
  * creates array of ListItem's JSX according to the tree data array
  */
@@ -34,22 +30,23 @@ function createListItemsJsx({data, textField, valueField, childrenField}) {
         value = {value}
         key = {index}
         primaryText= {item[textField]}
+        hasChildren = {item.hasChildren}
         nestedItems = {createListItemsJsx({
           data: item[childrenField],
           textField,
           valueField, 
           childrenField
         })}
-        primaryTogglesNestedList = {true}
-        insetChildren = {true}
+        primaryTogglesNestedList
+        insetChildren
         autoGenerateNestedIndicator={false}/>
     );
   });
 }
 
 
-const TreeView = ({data, textField, childrenField, valueField, onChange}) => {
-  const defVal = data[0] && valueField ? data[0][valueField] : 1;
+const TreeView = ({data, defaultSelected, textField, childrenField, valueField, onChange}) => {
+  const defVal = defaultSelected;
   return (
     // <div style={Styles.container}>
       <SelectableList style={Styles.container} onChange={onChange} defaultValue={defVal} 
@@ -68,6 +65,7 @@ TreeView.defaultProps = {
 
 TreeView.propTypes = {
   data: PropTypes.array.isRequired,
+  defaultSelected: PropTypes.string.isRequired,
   textField: PropTypes.string.isRequired,
   childrenField: PropTypes.string.isRequired,
   valueField: PropTypes.string,
