@@ -11,6 +11,7 @@ const ExtendedDetails = ({ userDetails, className, }) => {
         <Line><F>תעודת זהות:</F><V>{userDetails.passport}</V></Line>
         <Line><F>דרגה:</F><V>{userDetails.rank}</V></Line>
         <Line><F>סיווג:</F><V>{userDetails.clasification}</V></Line>
+        <Line><F>תאריך שחרור:</F><V>{userDetails.releaseDate}</V></Line>
       </DetailBlock>
       <DetailBlock>
         <Line><F>טלפון:</F><V>{userDetails.phone}</V></Line>

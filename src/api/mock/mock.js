@@ -72,6 +72,7 @@ export const myUser = {
   passport: 6861599,
   rank: "אזרח!!",
   clasification: "מסווג",
+  releaseDate: "1/1/1000000000",
   phone: "051111",
   mobile: "052222",
   mail: "gamba@gamba.com",
