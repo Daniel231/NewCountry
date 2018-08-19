@@ -38,6 +38,7 @@ export class User {
     this.mail = json.mail;
     this.address = json.address;
     this.groups = json.groups;
+    this.releaseDate=json.releaseDate;
   }
 }
 
